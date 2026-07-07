@@ -1,5 +1,5 @@
 import { CheckCircle } from 'lucide-react';
-import PageBanner from '../components/PageBanner';
+import PageBanner from '../components/ui/PageBanner';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const programs = [
@@ -95,6 +95,7 @@ const programs = [
   },
 ];
 
+/* Programs page route container */
 export default function ProgramsPage() {
   return (
     <>
@@ -106,6 +107,8 @@ export default function ProgramsPage() {
   );
 }
 
+
+/* Programs introduction */
 function ProgramsIntro() {
   const ref = useScrollAnimation();
   return (
@@ -138,6 +141,8 @@ function ProgramsList() {
   );
 }
 
+
+/* Alternating program image and description row */
 function ProgramRow({ program, flip }: { program: (typeof programs)[0]; flip: boolean; delay: number }) {
   const ref = useScrollAnimation();
   return (
@@ -222,6 +227,8 @@ function StudentLifeSection() {
   );
 }
 
+
+/* Student life photo tile */
 function StudentLifePhoto({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="h-48 overflow-hidden rounded-xl">

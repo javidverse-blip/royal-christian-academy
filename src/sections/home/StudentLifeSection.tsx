@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const gallery = [
   {
@@ -33,7 +33,7 @@ const gallery = [
   },
 ];
 
-export default function StudentLife() {
+export default function StudentLifeSection() {
   const ref = useScrollAnimation();
   return (
     <section id="student-life" className="section-padding bg-white">

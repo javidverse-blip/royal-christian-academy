@@ -1,7 +1,7 @@
 import { MapPin, Building, Globe } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
-export default function Location() {
+export default function LocationSection() {
   const ref = useScrollAnimation();
   return (
     <section id="location" className="section-padding bg-gray-50">

@@ -1,348 +1,109 @@
-import {
-  Heart, Shield, Users, BookOpen, Activity, Sprout,
-  Mic, Star, CheckCircle, Globe
-} from 'lucide-react';
-import PageBanner from '../components/PageBanner';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import { Activity, ArrowRight, BookOpen, Heart, Mic, Shield, Sprout, Star, Users } from 'lucide-react';
+import PageBanner from '../components/ui/PageBanner';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder';
+import { usePage } from '../context/PageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const coreValues = [
   { icon: Heart, label: 'Love', desc: "Rooted in God's unconditional love for every learner and staff member." },
-  { icon: Shield, label: 'Excellence with Humility', desc: 'Pursuing the highest standards while remaining grounded in humility and grace.' },
+  { icon: Shield, label: 'Excellence with Humility', desc: 'Pursuing high standards while remaining grounded in humility and grace.' },
   { icon: Users, label: 'Respect and Dignity', desc: 'Honoring the God-given worth and dignity of every individual.' },
-  { icon: BookOpen, label: 'Faith in Christ', desc: 'Placing Jesus at the center of all learning, teaching, and community life.' },
-  { icon: Activity, label: 'Discipleship and Character', desc: 'Forming Christ-like character through intentional mentorship and community.' },
-  { icon: Mic, label: 'Prayer and Worship', desc: 'Maintaining a culture of prayer and praise that sustains everything we do.' },
-  { icon: Sprout, label: 'Service and Compassion', desc: 'Inspiring students to serve others with a generous and compassionate heart.' },
+  { icon: BookOpen, label: 'Faith in Christ', desc: 'Placing Jesus at the center of learning, teaching, and community life.' },
+  { icon: Activity, label: 'Discipleship and Character', desc: 'Forming Christ-like character through mentorship and community.' },
+  { icon: Mic, label: 'Prayer and Worship', desc: 'Maintaining a culture of prayer and praise that sustains our work.' },
+  { icon: Sprout, label: 'Service and Compassion', desc: 'Inspiring students to serve others with generous and compassionate hearts.' },
   { icon: Star, label: 'School Leadership', desc: 'Guiding with integrity, wisdom, and faithfulness to our Christian mission.' },
 ];
 
-const leadership = [
-  {
-    role: 'Founder',
-    name: 'Diana Booker',
-    description: "The Founder provides the vision and guiding principles upon which the institution was established, ensuring the school's mission, values, and Christian identity remain central to all programs and activities.",
-    image: '/diana.jpg',
-    imageClass: 'object-[center_36%]',
-    variant: 'person' as const,
-  },
-  {
-    role: 'Board of Directors',
-    description: 'The Board provides governance, oversight, and strategic direction. The Board works closely with the administration to ensure accountability, sustainability, and the fulfillment of the institution\'s mission.',
-    variant: 'building' as const,
-  },
-  {
-    role: 'Director',
-    name: 'Mr. Kelzy Origi',
-    phone: '(+254)-715-726-929',
-    description: 'The Director oversees overall administration, strategic planning, and development, ensuring all departments work effectively together to achieve the school\'s goals and vision.',
-    variant: 'person' as const,
-  },
-];
-
-const faculty = [
-  { name: 'Mr. Maxwell Okoth', role: 'Principal', image: '/principal.png', imageClass: 'object-[center_32%]', variant: 'person' as const },
-  { name: 'Teacher Name', role: 'Pre-school Teacher', variant: 'person' as const },
-  { name: 'Teacher Name', role: 'Grade 1 Teacher', variant: 'person' as const },
-  { name: 'Teacher Name', role: 'Grade 2 Teacher', variant: 'person' as const },
-  { name: 'Teacher Name', role: 'Grade 3 Teacher', variant: 'person' as const },
-  { name: 'Teacher Name', role: 'Vocational Skills Teacher', variant: 'activity' as const },
-];
-
+/* About page route container */
 export default function AboutPage() {
-  return (
-    <>
-      <PageBanner page="about" />
-      <AboutSection />
-      <CoreValuesSection />
-      <LeadershipSection />
-      <FacultySection />
-      <FoundersDonors />
-      <AccreditationSection />
-    </>
-  );
+  return <><PageBanner page="about" /><AboutIntro /><MissionVision /><CoreValues /><SchoolStory /></>;
 }
 
-/* About section */
-function AboutSection() {
+
+/* Academy introduction and school image */
+function AboutIntro() {
   const ref = useScrollAnimation();
-  const imgRef = useScrollAnimation();
-  return (
-    <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div ref={ref} className="animate-on-scroll">
-            <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Academy</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-6 leading-tight">
-              Building Tomorrow's<br />Kingdom Leaders
-            </h2>
-            <p className="text-gray-600 text-base leading-loose mb-5">
-              Kapsitwet Royal Christian Academy is a place where education is founded on Christian values and the timeless wisdom of God's Word. We are committed to nurturing the whole child — mind, body, and spirit — preparing our learners for success in this life and the life to come.
-            </p>
-            <p className="text-gray-600 text-base leading-loose mb-5">
-              Guided by our vision, <em>"Victory in Jesus,"</em> we strive to create an environment where faith, character, knowledge, and service flourish together. Our goal is to help every learner develop a personal relationship with Christ while pursuing academic excellence and purposeful living.
-            </p>
-            <p className="text-gray-600 text-base leading-loose">
-              Our dedicated teachers and staff are committed Christian professionals who serve as educators, mentors, and role models — providing quality instruction, spiritual guidance, and personal support that help every learner reach their God-given potential.
-            </p>
-          </div>
-          <div ref={imgRef} className="animate-on-scroll">
-            <div className="h-72 sm:h-80 w-full overflow-hidden rounded-2xl shadow-xl">
-              <img
-                src="/our-school.jpg"
-                alt="Our school in Kapsitwet, Kitale"
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <section className="section-padding bg-white"><div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div ref={ref} className="animate-on-scroll"><p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Academy</p><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-6 leading-tight">Building Tomorrow's<br />Kingdom Leaders</h2><p className="text-gray-600 leading-loose mb-5">Kapsitwet Royal Christian Academy is a place where education is founded on Christian values and the timeless wisdom of God's Word. We are committed to nurturing the whole child - mind, body, and spirit - preparing our learners for success in this life and the life to come.</p><p className="text-gray-600 leading-loose">Guided by our vision, <em>"Victory in Jesus,"</em> we strive to create an environment where faith, character, knowledge, and service flourish together. Our goal is to help every learner develop a personal relationship with Christ while pursuing academic excellence and purposeful living.</p></div>
+    <img src="/our-school.jpg" alt="Royal Christian Academy school community" className="h-80 lg:h-[28rem] w-full rounded-2xl object-cover shadow-sm" />
+  </div></section>;
 }
 
-/* Core values section */
-function CoreValuesSection() {
-  const ref = useScrollAnimation();
-  return (
-    <section className="section-padding bg-cream">
-      <div className="max-w-7xl mx-auto">
-        <div ref={ref} className="animate-on-scroll text-center mb-12">
-          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">What We Stand For</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Core Values</h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
-            Eight foundational values that guide every decision, relationship, and program at our school.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {coreValues.map((v, i) => (
-            <ValueCard key={i} value={v} delay={i * 70} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+
+/* Mission and vision overview */
+function MissionVision() {
+  return <section className="section-padding bg-cream"><div className="max-w-7xl mx-auto"><div className="text-center mb-12"><p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Foundation</p><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif">Mission &amp; Vision</h2></div><div className="grid md:grid-cols-2 gap-6">
+    <article className="bg-white rounded-2xl p-7 sm:p-9 border border-gray-100 shadow-sm"><p className="text-gold text-xs font-bold tracking-widest uppercase mb-3">Our Mission</p><h3 className="font-bold text-forest text-2xl font-serif mb-4">Educating the whole child</h3><p className="text-gray-600 leading-relaxed">To provide Christ-centered education that equips learners academically, spiritually, physically, and socially for lives of service and faithful leadership.</p></article>
+    <article className="bg-forest rounded-2xl p-7 sm:p-9 shadow-sm"><p className="text-gold text-xs font-bold tracking-widest uppercase mb-3">Our Vision</p><h3 className="font-bold text-white text-2xl font-serif mb-4">Victory in Jesus</h3><p className="text-white/70 leading-relaxed">A flourishing school community where every child knows their God-given worth and is prepared to live with wisdom, courage, compassion, and hope.</p></article>
+  </div></div></section>;
 }
 
-function ValueCard({ value, delay }: { value: (typeof coreValues)[0]; delay: number }) {
-  const ref = useScrollAnimation();
-  const Icon = value.icon;
-  return (
-    <div
-      ref={ref}
-      className="animate-on-scroll hover-lift bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100"
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-forest flex items-center justify-center mb-4">
-        <Icon size={18} className="text-gold" />
-      </div>
-      <h3 className="font-bold text-forest text-sm font-serif mb-2">{value.label}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{value.desc}</p>
-    </div>
-  );
+
+/* Christian core values */
+function CoreValues() {
+  return <section className="section-padding bg-white"><div className="max-w-7xl mx-auto"><div className="text-center mb-12"><p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">What We Stand For</p><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Core Values</h2><p className="text-gray-500 max-w-xl mx-auto">Eight values guide every decision, relationship, and program at our school.</p></div><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{coreValues.map(({ icon: Icon, label, desc }) => <article key={label} className="hover-lift bg-cream rounded-2xl p-6 border border-gray-100"><div className="w-11 h-11 rounded-xl bg-forest flex items-center justify-center mb-4"><Icon size={18} className="text-gold" /></div><h3 className="font-bold text-forest text-sm font-serif mb-2">{label}</h3><p className="text-gray-500 text-sm leading-relaxed">{desc}</p></article>)}</div></div></section>;
 }
 
-/* Leadership section */
-function LeadershipSection() {
-  const ref = useScrollAnimation();
-  return (
-    <section className="section-padding bg-white">
-      <div className="max-w-5xl mx-auto">
-        <div ref={ref} className="animate-on-scroll text-center mb-12">
-          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Who Leads Us</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">School Leadership</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
-            Our leadership team is committed to nurturing students academically, spiritually, physically, and socially — preparing them for lives of service, leadership, and Christian witness.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-7">
-          {leadership.map((leader, i) => (
-            <LeaderCard key={i} leader={leader} delay={i * 90} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+
+/* Labeled replacement frame for missing story photography */
+function StoryPlaceholder({ file, className = 'h-80 sm:h-96', variant = 'gallery' }: { file: string; className?: string; variant?: 'gallery' | 'building' | 'person' | 'community' }) {
+  return <ImagePlaceholder variant={variant} label={`Replace with public/About Us/${file}`} className={className} rounded="rounded-none" />;
 }
 
-function LeaderCard({ leader, delay }: { leader: (typeof leadership)[0]; delay: number }) {
-  const ref = useScrollAnimation();
-  const { name, role, phone, description, image, imageClass, variant } = leader;
 
-  return (
-    <div
-      ref={ref}
-      className="animate-on-scroll hover-lift bg-cream rounded-2xl overflow-hidden border border-gray-100 shadow-sm"
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {image ? (
-        <img
-          src={image}
-          alt={name ?? role}
-          className={`h-56 sm:h-60 w-full object-cover ${imageClass ?? 'object-center'}`}
-          loading="lazy"
-        />
-      ) : (
-        <ImagePlaceholder
-          variant={variant}
-          label={name ?? 'Photo Coming Soon'}
-          className="h-56 sm:h-60"
-          rounded="rounded-none"
-        />
-      )}
-      <div className="p-5">
-        <div className="w-8 h-1 bg-gold rounded-full mb-3" />
-        <p className="text-gold text-xs font-bold tracking-widest uppercase mb-1">{role}</p>
-        {name && <h3 className="font-bold text-forest text-base font-serif mb-1">{name}</h3>}
-        {phone && (
-          <a href={`tel:${phone}`} className="text-xs text-forest-light hover:text-gold transition-colors mb-2 block">
-            {phone}
-          </a>
-        )}
-        <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
-      </div>
-    </div>
-  );
+/* Story banner and chronological story sections */
+function SchoolStory() {
+  return <><section className="bg-cream pt-10 sm:pt-12"><div className="relative min-h-[340px] overflow-hidden bg-forest"><StoryPlaceholder file="a-school-born.png" className="absolute inset-0 h-full w-full opacity-45" variant="community" /><div className="absolute inset-0 bg-forest/55" /><div className="relative z-10 min-h-[340px] max-w-3xl mx-auto px-6 py-9 text-center flex flex-col justify-center items-center"><p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Story</p><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-serif leading-tight mb-7">A School Born and Thriving From Faith</h2><blockquote className="text-gold text-xl sm:text-2xl font-serif italic mb-3">"It's a rescue mission disguised as a school."</blockquote><p className="text-white/90 leading-relaxed max-w-2xl">The remarkable true story of how God used ordinary people, extraordinary faith, and answered prayers to transform the lives of vulnerable children in rural Kenya.</p></div></div></section><HumbleBeginning /><FaithQuestion /><SaferFuture /><BurdenShared /><AnsweredPrayer /><ContinuingNeed /><AboutCta /></>;
 }
 
-/* Faculty and staff section */
-function FacultySection() {
-  const ref = useScrollAnimation();
-  return (
-    <section className="section-padding bg-cream">
-      <div className="max-w-7xl mx-auto">
-        <div ref={ref} className="animate-on-scroll text-center mb-12">
-          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Teachers</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Faculty &amp; Staff</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
-            Our faculty and staff are committed Christian professionals — educators, mentors, and role models dedicated to helping every learner reach their God-given potential.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {faculty.map((member, i) => (
-            <FacultyCard key={i} member={member} delay={i * 80} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+
+/* A humble beginning and post-COVID hardship */
+function HumbleBeginning() {
+  return <><section className="py-14 px-4 sm:px-8 sm:py-16 lg:px-16 bg-white"><div className="max-w-7xl mx-auto"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif text-center mb-10">A humble beginning</h2><div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"><div className="text-gray-600 leading-8 space-y-5"><p><strong className="text-forest font-serif text-xl">The first thing people noticed was his feet.</strong><br /><br />Not his smile.<br />Not his age.<br /><strong className="text-forest">His feet.</strong></p><p>They were swollen and infected with jiggers, tiny parasites that burrow into the skin. Every step was painful. Beside him stood his two younger sisters.</p><p>Their clothes were worn thin. Hunger had become such a normal part of life that they no longer complained about it.</p><p>The boy was fourteen years old. He could not read because poverty had stolen opportunities that most children take for granted.</p></div><StoryPlaceholder file="a-humble-beginning.png" className="h-[28rem] lg:h-[34rem]" variant="person" /></div></div></section>
+  <section className="pt-14 sm:pt-16 bg-forest"><div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-serif mb-4">After COVID, hardship deepened.</h2><p className="text-gold text-xl sm:text-2xl font-serif italic mb-10">Children who wanted to learn were being left behind.</p></div><div className="w-full bg-white border-y border-white/30 shadow-lg"><div className="max-w-7xl mx-auto grid lg:grid-cols-2 items-center"><StoryPlaceholder file="after-covid.png" className="h-80 sm:h-96 lg:h-[28rem]" /><div className="p-6 sm:p-9 lg:p-11 text-gray-700 leading-8 space-y-5"><p>After COVID, many Kenyan families were pushed even deeper into poverty. Jobs disappeared. Food became scarce. School fees became impossible for many parents to afford. Children who wanted to learn were left behind, not because they lacked ability, but because their families simply could not pay.</p><p>At the same time, a woman named Nancy was facing struggles of her own. A teacher and mother, she was trying to provide for her family with limited resources and an uncertain future.</p></div></div></div></section></>;
 }
 
-function FacultyCard({ member, delay }: { member: (typeof faculty)[0]; delay: number }) {
-  const ref = useScrollAnimation();
-  const { name, role, image, imageClass, variant } = member;
 
-  return (
-    <div
-      ref={ref}
-      className="animate-on-scroll hover-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {image ? (
-        <img
-          src={image}
-          alt={name}
-          className={`h-56 sm:h-60 w-full object-cover ${imageClass ?? 'object-center'}`}
-          loading="lazy"
-        />
-      ) : (
-        <ImagePlaceholder
-          variant={variant}
-          label="Photo Coming Soon"
-          className="h-56 sm:h-60"
-          rounded="rounded-none"
-        />
-      )}
-      <div className="p-5">
-        <div className="w-8 h-1 bg-gold rounded-full mb-3" />
-        <h3 className="font-bold text-forest text-base font-serif mb-1">{name}</h3>
-        <p className="text-gold text-xs font-bold tracking-widest uppercase">{role}</p>
-      </div>
-    </div>
-  );
+/* Nancy's call to teach and the first classroom */
+function FaithQuestion() {
+  return <><section className="py-10 px-4 sm:px-8 sm:py-12 lg:px-16 lg:py-14 bg-white"><div className="max-w-7xl mx-auto text-center"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-3">"What is in your hand?"</h2><p className="text-gold text-lg sm:text-xl font-serif italic mb-8">God began with what Nancy already had: the ability to teach.</p><div className="max-w-6xl mx-auto bg-forest rounded-2xl overflow-hidden shadow-lg grid lg:grid-cols-2 text-left items-center"><div className="p-6 sm:p-8 lg:p-10 text-white/90 leading-8">Yet in the middle of her own hardship, she felt God asking a simple question: <strong className="text-gold">"What is in your hand?"</strong> Nancy did not have money, a school, buildings, staff, or funding. What she had was the ability to teach. She asked parents who could not afford school fees if they would allow her to teach their children. Those few children became the beginning of something neither Nancy nor the families could have imagined.</div><StoryPlaceholder file="first-classroom.png" className="h-72 sm:h-96 lg:h-[28rem]" variant="building" /></div></div></section>
+  <section className="py-12 px-4 sm:px-8 lg:px-16 bg-forest"><div className="max-w-7xl mx-auto text-center"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-serif mb-4">The first classroom was little more than a shed.</h2><p className="text-gold text-xl sm:text-2xl font-serif italic mb-9">The floor was only dirt, but the little school represented hope.</p><div className="max-w-6xl mx-auto bg-white rounded-2xl overflow-hidden grid lg:grid-cols-2 text-left shadow-lg items-center"><StoryPlaceholder file="first-classroom.png" className="h-80 sm:h-96 lg:h-[28rem]" variant="building" /><div className="p-6 sm:p-9 lg:p-11 text-gray-700 leading-8 space-y-5"><p>The structure offered little protection from the weather. Food was scarce. Some mornings, the children received only a cup of porridge. Yet every day they came.</p><p>As word spread, more children arrived. Some came hungry or sick. The school quickly became more than a place of learning. It became a refuge.</p></div></div></div></section><MealsSection /></>;
 }
 
-/* Founders and donors section */
-function FoundersDonors() {
-  const ref = useScrollAnimation();
-  return (
-    <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div ref={ref} className="animate-on-scroll text-center mb-12">
-          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Supporters</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Founders &amp; Donors</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-            Kapsitwet Royal Christian Academy is grateful for the vision, dedication, and support of its founders, donors, and partners. Their contributions help advance the mission of providing Christ-centered education and creating opportunities for students to grow academically, spiritually, and practically.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
-          <SupporterCard icon={Heart} label="Donors" desc="Generous individuals who believe in Christ-centered education for children in Kenya." delay={0} />
-          <SupporterCard icon={Globe} label="Church Partners" desc="Faith communities who pray for, encourage, and support the academy's mission." delay={100} />
-          <SupporterCard icon={Users} label="Organizations" desc="Institutions that partner with us to expand our impact within the community." delay={200} />
-        </div>
-      </div>
-    </section>
-  );
+
+/* Meals, medical care, dignity, and the shoes testimony */
+function MealsSection() {
+  return <section className="py-10 px-4 sm:px-8 sm:py-12 lg:px-16 lg:py-14 bg-white"><div className="max-w-7xl mx-auto text-center"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-3">Children received meals.</h2><p className="text-gold text-lg sm:text-xl font-serif italic mb-8">The school became a place of care, dignity, and restoration.</p><div className="max-w-6xl mx-auto bg-forest rounded-2xl overflow-hidden shadow-lg"><div className="grid lg:grid-cols-2 items-end border-b border-white/15"><div className="p-6 sm:p-8 lg:p-10 text-white/90 leading-8 space-y-5 text-left"><p>Medical needs were addressed. Clothing was provided. Most importantly, children were treated with dignity.</p><p>The fourteen-year-old boy and his sisters received food, care, treatment, and the opportunity to begin rebuilding their lives.</p><p>Years of education had been stolen from him, but he was given a place to begin again. Then one day, donors helped purchase shoes for the children.</p></div><StoryPlaceholder file="Children-received-meals.png" className="h-72 sm:h-96 lg:h-[28rem]" variant="community" /></div><div className="max-w-4xl mx-auto text-center px-6 sm:px-8 py-8"><p className="text-white/80 leading-8 mb-5">As the children gathered, the boy shared something that left the room silent.</p><blockquote className="text-gold text-2xl sm:text-3xl font-bold font-serif mb-5">"It's the first pair of shoes I've ever owned."</blockquote><p className="text-white/80 leading-8">Everyone understood that the school was never simply about education. It was about restoring dignity and giving children opportunities that poverty had tried to take away.</p></div></div></div></section>;
 }
 
-function SupporterCard({ icon: Icon, label, desc, delay }: { icon: React.ElementType; label: string; desc: string; delay: number }) {
-  const ref = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className="animate-on-scroll hover-lift bg-cream rounded-2xl p-6 sm:p-7 text-center border border-gray-100 shadow-sm"
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-forest flex items-center justify-center mx-auto mb-5">
-        <Icon size={22} className="text-gold" />
-      </div>
-      <h3 className="font-bold text-forest text-lg font-serif mb-3">{label}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-    </div>
-  );
+
+/* School closure, rebuilding, and the need for dormitories */
+function SaferFuture() {
+  return <section className="py-14 px-4 sm:px-8 sm:py-16 lg:px-16 bg-forest"><div className="max-w-7xl mx-auto text-center"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-serif mb-4">Some lived too far away to travel every day.</h2><p className="text-gold text-xl sm:text-2xl font-serif italic mb-10">Others came from difficult and unsafe environments.</p><div className="max-w-6xl mx-auto bg-forest-light border border-white/15 rounded-2xl overflow-hidden grid lg:grid-cols-[0.9fr_1.1fr] text-left shadow-lg"><StoryPlaceholder file="07-classroom-meeting-wide.png" className="h-80 sm:h-96 lg:h-full" /><div className="p-6 sm:p-9 lg:p-11 text-white/90 leading-8 space-y-5"><p>As the school grew, the facilities became inadequate. Government inspectors determined the buildings did not meet required standards.</p><p>The school was shut down, but the crisis became a turning point. Plans were made to rebuild properly and create safer classrooms.</p><p>Many children needed more than a classroom. If the school were truly going to protect them, more dormitories would have to be built.</p></div></div></div></section>;
 }
 
-function AccreditationSection() {
-  const ref = useScrollAnimation();
-  return (
-    <section className="section-padding bg-cream">
-      <div className="max-w-7xl mx-auto">
-        <div ref={ref} className="animate-on-scroll text-center mb-10 sm:mb-12">
-          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Recognition</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Accreditation &amp; Affiliations</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-forest flex items-center justify-center mb-5">
-              <CheckCircle size={20} className="text-gold" />
-            </div>
-            <h3 className="font-bold text-forest text-lg sm:text-xl font-serif mb-3">Accreditation</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Kapsitwet Royal Christian Academy is duly registered and recognized by the relevant government authorities and operates in compliance with applicable educational regulations and standards in Kenya.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-forest flex items-center justify-center mb-5">
-              <Globe size={20} className="text-gold" />
-            </div>
-            <h3 className="font-bold text-forest text-lg sm:text-xl font-serif mb-3">Affiliations</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              The Academy is affiliated with international partners who provide valuable spiritual guidance, encouragement, and support that strengthen our mission of providing Christ-centered education.
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2 text-sm text-gray-600">
-                <span className="text-gold mt-1">•</span>
-                Camden Seventh-day Adventist Church — Tennessee, USA
-              </li>
-              <li className="flex items-start gap-2 text-sm text-gray-600">
-                <span className="text-gold mt-1">•</span>
-                BlessingsAnew.com Ministry — Georgia, USA
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+
+/* Diana's burden, prayer, and the early-morning call */
+function BurdenShared() {
+  return <section className="py-14 px-4 sm:px-8 sm:py-16 lg:px-16 bg-white"><div className="max-w-7xl mx-auto"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif text-center mb-7">Diana Booker was carrying the burden.</h2><p className="max-w-5xl mx-auto text-gray-600 leading-8 mb-7">Construction began. The boys' dormitory walls went up. The girls' dormitory foundation was poured. Then the money ran out. Construction stopped. The buildings stood unfinished. Walls reached toward the sky, but no roof covered them. The need remained. The children continued to come. Thousands of miles away, in the United States, Diana Booker was carrying the burden.</p><p className="max-w-5xl mx-auto text-gray-600 leading-8 mb-12">She had walked the school grounds, met the children, and seen the conditions they came from. The unfinished dormitories stayed in her thoughts. Those buildings represented beds, safety, protection, and opportunity.</p><div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12"><div className="text-gray-600 leading-8 space-y-5"><p>Diana reached the end of her own ability to solve the problem. She knew she could not force provision to appear. So she prayed.</p><blockquote className="border-l-4 border-gold pl-5 text-lg text-forest font-serif italic">"Lord, there are people somewhere who have the resources to finish these dormitories. Speak to them, please. Let them know these children really need help."</blockquote><p>Then she left it in God's hands.</p></div><StoryPlaceholder file="09-woman-praying.png" className="h-80 sm:h-[28rem]" variant="person" /></div><div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"><div className="text-gray-600 leading-8 space-y-5 lg:order-2"><p>But God was already moving. Early one morning, a retired businessman from Georgia called because God had been speaking to him.</p><p>God had told him to give money to a school in Africa. As he considered whom he knew connected to ministry work in Africa, one name came to mind: <strong className="text-forest">Diana Booker.</strong></p></div><div className="lg:order-1"><StoryPlaceholder file="08-phone-prayer-moment.png" className="h-80 sm:h-[28rem]" /></div></div></div></section>;
+}
+
+
+/* Answered prayer and the school's testimony */
+function AnsweredPrayer() {
+  return <section className="py-14 px-4 sm:px-8 sm:py-16 lg:px-16 bg-cream"><div className="max-w-7xl mx-auto"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif text-center mb-9">While Diana prayed, God was moving</h2><div className="max-w-5xl mx-auto text-gray-600 leading-8 space-y-5 mb-12"><p>Diana related the prayer she had poured out before God. God had answered it. No fundraising appeal had reached the businessman and no one had called him asking for money.</p><p>For Diana, the greatest miracle was the reminder that God still hears the cries that come from burdened hearts.</p></div><div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-8 lg:gap-14 items-center mb-12"><blockquote className="text-gold text-3xl sm:text-4xl font-serif italic text-center lg:text-right">"While we are praying, He is already working on the answer."</blockquote><StoryPlaceholder file="10-children-gathered-outside.png" className="h-80 sm:h-[28rem]" variant="community" /></div><p className="max-w-5xl mx-auto text-gray-600 leading-8">Today, the school stands as a testimony to ordinary people responding to God's prompting. Children have been fed, educated, cared for, and given hope. It has been a rescue mission disguised as a school.</p></div></section>;
+}
+
+
+/* Current needs and opportunities to respond */
+function ContinuingNeed() {
+  return <section className="py-14 px-4 sm:px-8 sm:py-16 lg:px-16 bg-forest"><div className="max-w-7xl mx-auto text-center"><p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">The Story Continues</p><h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-serif mb-4">The need keeps growing.</h2><p className="text-gold text-xl sm:text-2xl font-serif italic mb-10">And so does the opportunity to respond.</p><div className="max-w-6xl mx-auto bg-forest-light border border-white/15 rounded-2xl overflow-hidden grid lg:grid-cols-[0.9fr_1.1fr] text-left shadow-lg"><StoryPlaceholder file="11-students-purple-uniform.png" className="h-80 sm:h-96 lg:h-full" variant="community" /><div className="p-6 sm:p-9 lg:p-11 text-white/90 leading-8 space-y-5"><p>More children need help. Additional classrooms, a larger kitchen, completed dormitories, and support toward the remaining $35,000 property balance will help the school serve them safely.</p><p>The miracle was never simply that resources arrived - it was that someone listened when God spoke.</p><p className="text-gold text-lg font-serif font-bold">The question is whether we will listen and respond when He does.</p></div></div></div></section>;
+}
+
+
+/* Final call to action before the footer */
+function AboutCta() {
+  const { navigate } = usePage();
+  return <section className="py-14 px-4 sm:px-8 sm:py-16 lg:px-16 bg-white"><div className="max-w-5xl mx-auto rounded-2xl bg-forest px-6 py-10 sm:px-10 sm:py-12 text-center shadow-lg"><p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Be Part of the Story</p><h2 className="text-3xl sm:text-4xl font-bold text-white font-serif mb-5">Help faith become visible for another child.</h2><p className="text-white/80 leading-8 max-w-2xl mx-auto mb-8">Your prayers, partnership, and support can help provide education, meals, safety, and lasting hope.</p><div className="flex flex-col sm:flex-row items-center justify-center gap-4"><a href="mailto:royalchristianacademy07@gmail.com?subject=Support%20the%20Mission" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold text-forest font-bold px-7 py-3.5 rounded-full hover:bg-gold-light transition-colors">Support the Mission <ArrowRight size={17} /></a><button onClick={() => navigate('programs')} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-white/10 transition-colors">Explore Our Programs</button></div></div></section>;
 }

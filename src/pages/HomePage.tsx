@@ -20,6 +20,7 @@ const values = [
   { icon: Sprout, label: 'Service' },
 ];
 
+/* Home page route container */
 export default function HomePage() {
   const { navigate } = usePage();
   return (
@@ -70,7 +71,7 @@ function Hero({ navigate }: { navigate: (p: any) => void }) {
               Learn More About Us
             </button>
             <button
-              onClick={() => navigate('contact')}
+              onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
               className="border-2 border-gold text-gold font-semibold px-10 py-4 rounded-full text-base hover:bg-gold hover:text-forest-dark transition-all duration-300"
             >
               Book a Visit
@@ -126,7 +127,7 @@ function WelcomeSection({ navigate }: { navigate: (p: any) => void }) {
                 Learn More About Us
               </button>
               <button
-                onClick={() => navigate('contact')}
+                onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
                 className="border-2 border-forest text-forest font-semibold px-8 py-3 rounded-full hover:bg-forest hover:text-white transition-colors duration-200"
               >
                 Book a Visit
@@ -174,6 +175,8 @@ function MissionVision({ navigate }: { navigate: (p: any) => void }) {
   );
 }
 
+
+/* Mission or vision card */
 function MvCard({ label, text, delay }: { label: string; text: string; delay: number }) {
   const ref = useScrollAnimation();
   return (
@@ -219,6 +222,8 @@ function ProgramsPreview({ navigate }: { navigate: (p: any) => void }) {
   );
 }
 
+
+/* Homepage program preview card */
 function ProgramCard({ program, delay }: { program: (typeof programs)[0]; delay: number }) {
   const ref = useScrollAnimation();
   return (
@@ -266,6 +271,8 @@ function ValuesSection() {
   );
 }
 
+
+/* School value badge */
 function ValueBadge({ value, delay }: { value: (typeof values)[0]; delay: number }) {
   const ref = useScrollAnimation();
   const Icon = value.icon;
@@ -283,6 +290,8 @@ function ValueBadge({ value, delay }: { value: (typeof values)[0]; delay: number
   );
 }
 
+
+/* Final admissions call to action */
 function CtaSection({ navigate }: { navigate: (p: any) => void }) {
   const ref = useScrollAnimation();
   return (
@@ -304,7 +313,7 @@ function CtaSection({ navigate }: { navigate: (p: any) => void }) {
               Apply for Admission
             </button>
             <button
-              onClick={() => navigate('contact')}
+              onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
               className="border-2 border-forest text-forest font-semibold px-10 py-4 rounded-full hover:bg-forest hover:text-white transition-all duration-300"
             >
               Contact Us

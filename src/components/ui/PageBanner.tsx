@@ -1,10 +1,10 @@
 import { ChevronRight } from 'lucide-react';
-import { usePage, type Page } from '../context/PageContext';
+import { usePage, type Page } from '../../context/PageContext';
 
 const bannerConfig: Record<Exclude<Page, 'home'>, { title: string; subtitle: string }> = {
   about: {
     title: 'About Us',
-    subtitle: 'Our story, mission, values, and the people who make this school family.',
+    subtitle: 'Discover the faith, people, and answered prayers that transformed a humble beginning into a place of learning, dignity, and hope.',
   },
   programs: {
     title: 'Our Programs',
@@ -14,9 +14,13 @@ const bannerConfig: Record<Exclude<Page, 'home'>, { title: string; subtitle: str
     title: 'Admissions',
     subtitle: 'Join the Kapsitwet Royal Christian Academy family today.',
   },
-  contact: {
-    title: 'Contact Us',
-    subtitle: 'We are located in Kapsitwet, Kitale, Trans-Nzoia County, Kenya.',
+  staff: {
+    title: 'Our Staff',
+    subtitle: 'Meet the dedicated leaders, educators, mentors, and supporters serving our school community.',
+  },
+  gallery: {
+    title: 'Gallery',
+    subtitle: 'A glimpse into student activities, learning, worship, service, and the projects shaping our future.',
   },
 };
 

@@ -1,12 +1,13 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
-import { usePage, type Page } from '../context/PageContext';
+import { usePage, type Page } from '../../context/PageContext';
 
 const quickLinks: { label: string; page: Page }[] = [
   { label: 'Home', page: 'home' },
   { label: 'About Us', page: 'about' },
   { label: 'Programs', page: 'programs' },
   { label: 'Admissions', page: 'admissions' },
-  { label: 'Contact', page: 'contact' },
+  { label: 'Our Staff', page: 'staff' },
+  { label: 'Gallery', page: 'gallery' },
 ];
 
 export default function Footer() {
@@ -93,12 +94,12 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <button
-              onClick={() => navigate('admissions')}
+            <a
+              href="mailto:royalchristianacademy07@gmail.com"
               className="mt-6 inline-block bg-gold text-forest-dark font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-gold-light transition-colors duration-200"
             >
-              Enroll Now
-            </button>
+              Contact Us
+            </a>
           </div>
         </div>
 

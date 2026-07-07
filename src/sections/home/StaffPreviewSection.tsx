@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const staff = [
   {
@@ -39,7 +39,7 @@ const staff = [
   },
 ];
 
-export default function Staff() {
+export default function StaffPreviewSection() {
   const ref = useScrollAnimation();
   return (
     <section id="staff" className="section-padding bg-gray-50">

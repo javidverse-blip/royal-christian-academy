@@ -1,8 +1,6 @@
 import { ChevronDown } from 'lucide-react';
-import { usePage } from '../context/PageContext';
 
 export default function Hero() {
-  const { navigate } = usePage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -42,13 +40,13 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up">
           <button
-            onClick={() => navigate('contact')}
+            onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
             className="bg-royal-gold text-royal-purple font-bold px-10 py-4 rounded-full text-base hover:bg-royal-gold-light hover:scale-105 transition-all duration-300 shadow-xl"
           >
-            Enroll Now
+            Contact Us
           </button>
           <button
-            onClick={() => navigate('contact')}
+            onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
             className="border-2 border-royal-gold text-royal-gold font-semibold px-10 py-4 rounded-full text-base hover:bg-royal-gold hover:text-royal-purple transition-all duration-300"
           >
             Book a Visit

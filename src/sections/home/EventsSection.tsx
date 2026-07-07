@@ -1,8 +1,7 @@
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { usePage } from '../context/PageContext';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
-export default function Events() {
+export default function EventsSection() {
   const ref = useScrollAnimation();
   return (
     <section id="events" className="section-padding bg-white">
@@ -25,7 +24,6 @@ export default function Events() {
 
 function SeminarCard() {
   const ref = useScrollAnimation();
-  const { navigate } = usePage();
   return (
     <div
       ref={ref}
@@ -65,7 +63,7 @@ function SeminarCard() {
           </div>
 
           <button
-            onClick={() => navigate('contact')}
+            onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
             className="inline-flex items-center justify-center bg-royal-gold text-royal-purple font-bold px-8 py-4 rounded-full hover:bg-royal-gold-light hover:scale-105 transition-all duration-300 shadow-lg text-center"
           >
             Register Now

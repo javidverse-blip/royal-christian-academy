@@ -1,5 +1,5 @@
 import { Sprout, Library, Building2, Users } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const projects = [
   {
@@ -43,7 +43,7 @@ const statusColors: Record<string, string> = {
   Active: 'bg-royal-purple/10 text-royal-purple',
 };
 
-export default function Projects() {
+export default function ProjectsSection() {
   const ref = useScrollAnimation();
   return (
     <section id="projects" className="section-padding bg-gray-50">

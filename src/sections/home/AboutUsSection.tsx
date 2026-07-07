@@ -1,5 +1,5 @@
 import { Target, Eye, Crosshair, BookMarked } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const pillars = [
   {
@@ -24,7 +24,7 @@ const pillars = [
   },
 ];
 
-export default function AboutUs() {
+export default function AboutUsSection() {
   const headRef = useScrollAnimation();
   return (
     <section id="about" className="section-padding bg-gray-50">

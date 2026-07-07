@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
 import { PageContext, type Page } from './context/PageContext';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProgramsPage from './pages/ProgramsPage';
 import AdmissionsPage from './pages/AdmissionsPage';
-import ContactPage from './pages/ContactPage';
+import StaffPage from './pages/StaffPage';
+import GalleryPage from './pages/GalleryPage';
 
 const pagePaths: Record<Page, string> = {
   home: '/',
   about: '/about',
   programs: '/programs',
   admissions: '/admissions',
-  contact: '/contact',
+  staff: '/staff',
+  gallery: '/gallery',
 };
 
 function pageFromPath(pathname: string): Page {
@@ -27,7 +29,8 @@ function PageContent({ page }: { page: Page }) {
     case 'about':      return <AboutPage />;
     case 'programs':   return <ProgramsPage />;
     case 'admissions': return <AdmissionsPage />;
-    case 'contact':    return <ContactPage />;
+    case 'staff':      return <StaffPage />;
+    case 'gallery':    return <GalleryPage />;
     default:           return <HomePage />;
   }
 }

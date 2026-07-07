@@ -1,5 +1,5 @@
 import { Sunrise, BookOpen, Wrench, Dumbbell, Moon } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const moments = [
   {
@@ -44,7 +44,7 @@ const moments = [
   },
 ];
 
-export default function DayAtAcademy() {
+export default function DayAtAcademySection() {
   const ref = useScrollAnimation();
   return (
     <section id="day" className="section-padding bg-white">

@@ -1,6 +1,5 @@
 import { CheckCircle, Phone, Mail, MapPin, FileText, Calendar, DollarSign, ClipboardList } from 'lucide-react';
-import PageBanner from '../components/PageBanner';
-import { usePage } from '../context/PageContext';
+import PageBanner from '../components/ui/PageBanner';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const requirements = [
@@ -28,6 +27,7 @@ const documents = [
   'Transfer letter from the previous school (if applicable)',
 ];
 
+/* Admissions page route container */
 export default function AdmissionsPage() {
   return (
     <>
@@ -42,6 +42,8 @@ export default function AdmissionsPage() {
   );
 }
 
+
+/* Admissions welcome and key information */
 function AdmissionsIntro() {
   const ref = useScrollAnimation();
   return (
@@ -73,6 +75,8 @@ function InfoBadge({ icon: Icon, text }: { icon: React.ElementType; text: string
   );
 }
 
+
+/* Enrollment requirements */
 function RequirementsSection() {
   const ref = useScrollAnimation();
   return (
@@ -136,6 +140,8 @@ function RequirementsSection() {
   );
 }
 
+
+/* Step-by-step enrollment process */
 function EnrollmentProcess() {
   const ref = useScrollAnimation();
   return (
@@ -178,6 +184,8 @@ function StepCard({ step, delay, isLast }: { step: (typeof enrollmentSteps)[0]; 
   );
 }
 
+
+/* Fees and required documents */
 function FeesAndDocuments() {
   const feesRef = useScrollAnimation();
   const docsRef = useScrollAnimation();
@@ -230,6 +238,8 @@ function FeesAndDocuments() {
   );
 }
 
+
+/* Application dates and deadlines */
 function DeadlinesSection() {
   const ref = useScrollAnimation();
   return (
@@ -254,8 +264,9 @@ function DeadlinesSection() {
   );
 }
 
+
+/* Admissions contact options */
 function AdmissionsCta() {
-  const { navigate } = usePage();
   const ref = useScrollAnimation();
   return (
     <section className="section-padding bg-cream">
@@ -283,7 +294,7 @@ function AdmissionsCta() {
             <span className="text-gray-400 text-xs">We respond within 24hrs</span>
           </a>
           <button
-            onClick={() => navigate('contact')}
+            onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
             className="flex flex-col items-center gap-3 bg-gold text-forest-dark rounded-2xl p-6 hover:bg-gold-light transition-colors hover-lift text-center"
           >
             <MapPin size={24} />

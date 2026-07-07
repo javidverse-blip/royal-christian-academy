@@ -1,6 +1,5 @@
 import { BookOpen, UserCheck, Hammer, Heart } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { usePage } from '../context/PageContext';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const needs = [
   {
@@ -29,9 +28,8 @@ const needs = [
   },
 ];
 
-export default function Needs() {
+export default function NeedsSection() {
   const ref = useScrollAnimation();
-  const { navigate } = usePage();
   return (
     <section id="needs" className="section-padding" style={{ background: 'linear-gradient(135deg, #341d6f 0%, #250f5a 100%)' }}>
       <div className="max-w-7xl mx-auto">
@@ -55,13 +53,13 @@ export default function Needs() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => navigate('contact')}
+              onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
               className="bg-royal-gold text-royal-purple font-bold px-10 py-4 rounded-full hover:bg-royal-gold-light hover:scale-105 transition-all duration-300 shadow-xl"
             >
               Donate Now
             </button>
             <button
-              onClick={() => navigate('contact')}
+              onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
               className="border-2 border-white/50 text-white font-semibold px-10 py-4 rounded-full hover:border-royal-gold hover:text-royal-gold transition-all duration-300"
             >
               Support Us

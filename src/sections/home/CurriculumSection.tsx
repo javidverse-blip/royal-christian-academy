@@ -1,5 +1,5 @@
 import { GraduationCap, Heart, Dumbbell } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const tracks = [
   {
@@ -52,7 +52,7 @@ const tracks = [
   },
 ];
 
-export default function Curriculum() {
+export default function CurriculumSection() {
   const ref = useScrollAnimation();
   return (
     <section id="curriculum" className="section-padding bg-white">

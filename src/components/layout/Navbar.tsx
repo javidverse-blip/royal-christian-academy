@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { usePage, type Page } from '../context/PageContext';
+import { usePage, type Page } from '../../context/PageContext';
 
 const navLinks: { label: string; page: Page; href: string }[] = [
   { label: 'Home', page: 'home', href: '/' },
   { label: 'About', page: 'about', href: '/about' },
   { label: 'Programs', page: 'programs', href: '/programs' },
   { label: 'Admissions', page: 'admissions', href: '/admissions' },
-  { label: 'Contact', page: 'contact', href: '/contact' },
+  { label: 'Staff', page: 'staff', href: '/staff' },
+  { label: 'Gallery', page: 'gallery', href: '/gallery' },
 ];
 
 export default function Navbar() {
@@ -54,11 +55,10 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="/admissions"
-          onClick={(event) => { event.preventDefault(); navigate('admissions'); }}
+          href="mailto:royalchristianacademy07@gmail.com"
           className="hidden lg:block bg-gold text-forest-dark font-semibold text-sm px-5 py-2 rounded-full hover:bg-gold-light transition-colors duration-200 flex-shrink-0"
         >
-          Enroll Now
+          Contact Us
         </a>
 
         <button
@@ -90,11 +90,11 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href="/admissions"
-            onClick={(event) => { event.preventDefault(); navigate('admissions'); setOpen(false); }}
+            href="mailto:royalchristianacademy07@gmail.com"
+            onClick={() => setOpen(false)}
             className="block w-full text-center bg-gold text-forest-dark font-semibold px-6 py-3 rounded-full"
           >
-            Enroll Now
+            Contact Us
           </a>
         </div>
       )}
