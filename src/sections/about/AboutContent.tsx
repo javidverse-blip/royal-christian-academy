@@ -47,7 +47,7 @@ function AboutIntro() {
           </p>
         </div>
         <img
-          src="/images/about/our-school.jpg"
+          src="/images/about/our-school.webp"
           alt="Royal Christian Academy school community"
           className="h-80 lg:h-[28rem] w-full rounded-2xl object-cover shadow-sm"
         />

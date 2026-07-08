@@ -16,7 +16,7 @@ const programs = [
       'Supports academic concentration and performance',
       'Promotes overall physical well-being',
     ],
-    image: '/images/programs/feeding-program.jpg',
+    image: '/images/programs/feeding-program.webp',
     imageClass: 'object-[center_42%]',
   },
   {
@@ -31,7 +31,7 @@ const programs = [
       'Sustainable livelihood preparation',
       'Vocational certification pathways',
     ],
-    image: '/images/programs/vocational-training.jpg',
+    image: '/images/programs/vocational-training.webp',
     imageClass: 'object-[center_38%]',
   },
   {
@@ -46,7 +46,7 @@ const programs = [
       'Physical, mental, and spiritual wellness',
       'Lifestyle disease prevention',
     ],
-    image: '/images/programs/health-ministry.jpg',
+    image: '/images/programs/health-ministry.webp',
     imageClass: 'object-center',
   },
   {
@@ -61,7 +61,7 @@ const programs = [
       'Leadership development for ministry',
       'Character formation in Christ',
     ],
-    image: '/images/programs/bible-training.jpg',
+    image: '/images/programs/bible-training.webp',
     imageClass: 'object-center',
   },
   {
@@ -91,7 +91,7 @@ const programs = [
       'Food production and self-sufficiency',
       'Responsible land and resource management',
     ],
-    image: '/images/programs/agriculture-farming.jpg',
+    image: '/images/programs/agriculture-farming.webp',
     imageClass: 'object-center',
   },
 ];

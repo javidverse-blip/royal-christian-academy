@@ -2,35 +2,43 @@ import { ArrowRight } from 'lucide-react';
 import PageBanner from '../../components/ui/PageBanner';
 
 const studentLifePhotos = [
-  { title: 'Pre-primary', caption: 'Young learners growing together in a safe, joyful classroom environment.', image: '/images/gallery/pre-primary.jpg', imageClass: 'object-[center_44%]' },
-  { title: 'Grade 1', caption: 'Early primary students building confidence through guided learning.', image: '/images/gallery/grade-one.jpg', imageClass: 'object-[center_42%]' },
-  { title: 'Grade 2', caption: 'Students learning with focus, care, and encouragement.', image: '/images/gallery/grade-two.jpg', imageClass: 'object-[center_45%]' },
-  { title: 'Grade 3', caption: 'Growing learners developing strong classroom habits and friendships.', image: '/images/gallery/grade-three.jpg', imageClass: 'object-[center_42%]' },
+  { title: 'Pre-primary', caption: 'Young learners growing together in a safe, joyful classroom environment.', image: '/images/gallery/pre-primary.webp', imageClass: 'object-[center_44%]' },
+  { title: 'Grade 1', caption: 'Early primary students building confidence through guided learning.', image: '/images/gallery/grade-one.webp', imageClass: 'object-[center_42%]' },
+  { title: 'Grade 2', caption: 'Students learning with focus, care, and encouragement.', image: '/images/gallery/grade-two.webp', imageClass: 'object-[center_45%]' },
+  { title: 'Grade 3', caption: 'Growing learners developing strong classroom habits and friendships.', image: '/images/gallery/grade-three.webp', imageClass: 'object-[center_42%]' },
 ];
 
 const studentActivityPhotos = [
   {
     title: 'Worship',
     sentence: 'Our students participate in worship, where they learn how to pray and connect with God.',
-    image: '/images/gallery/students-worshipping.jpg',
+    image: '/images/gallery/students-worshipping.webp',
+    width: 1200,
+    height: 675,
     imageClass: 'object-[center_50%]',
   },
   {
     title: 'Classroom Learning',
     sentence: 'Students take part in classroom lessons that help them grow in knowledge, understanding, and confidence.',
-    image: '/images/gallery/student-in-class.jpg',
+    image: '/images/gallery/student-in-class.webp',
+    width: 1200,
+    height: 900,
     imageClass: 'object-[center_43%]',
   },
   {
     title: 'Drawing',
     sentence: 'Drawing gives students the opportunity to express creativity and develop their imagination.',
-    image: '/images/gallery/students-drawing.jpg',
+    image: '/images/gallery/students-drawing.webp',
+    width: 1200,
+    height: 675,
     imageClass: 'object-[center_50%]',
   },
   {
     title: 'Gardening',
     sentence: 'Through gardening, students learn responsibility, patience, and the value of caring for God’s creation.',
-    image: '/images/gallery/students-gardening.jpg',
+    image: '/images/gallery/students-gardening.webp',
+    width: 1200,
+    height: 675,
     imageClass: 'object-[center_48%]',
   },
 ];
@@ -61,8 +69,8 @@ export default function GalleryContent() {
                 <img
                   src={activity.image}
                   alt={activity.title}
-                  width="4080"
-                  height="3060"
+                  width="1200"
+                  height="900"
                   sizes="(min-width: 1024px) 592px, (min-width: 768px) 50vw, 100vw"
                   decoding="async"
                   className={`h-72 sm:h-80 lg:h-96 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${activity.imageClass}`}
@@ -93,8 +101,8 @@ export default function GalleryContent() {
                 <img
                   src={activity.image}
                   alt={activity.title}
-                  width="4080"
-                  height="2296"
+                  width={activity.width}
+                  height={activity.height}
                   sizes="(min-width: 1024px) 592px, (min-width: 768px) 50vw, 100vw"
                   decoding="async"
                   className={`h-72 sm:h-80 lg:h-96 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${activity.imageClass}`}

@@ -47,8 +47,8 @@ export default function PageBanner({ page }: { page: Exclude<Page, 'home'> }) {
           <img
             src="/images/general/krca-new-logo.png"
             alt=""
-            width="1300"
-            height="1327"
+            width="512"
+            height="523"
             aria-hidden="true"
             className="pointer-events-none absolute right-6 top-[54%] hidden w-40 -translate-y-1/2 opacity-[0.08] mix-blend-screen sm:block md:w-48 lg:right-16 lg:w-56 xl:w-64"
           />

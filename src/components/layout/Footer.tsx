@@ -25,8 +25,8 @@ export default function Footer() {
               <img
                 src="/images/general/krca-new-logo.png"
                 alt="Kapsitwet Royal Christian Academy"
-                width="1300"
-                height="1327"
+                width="512"
+                height="523"
                 className="h-14 w-14 rounded-full bg-white border-2 border-gold object-contain p-1 flex-shrink-0"
               />
               <div>

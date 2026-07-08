@@ -3,12 +3,12 @@ import { usePage, type Navigate } from '../../context/PageContext';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const programs = [
-  { icon: '🍽️', title: 'Feeding Program', desc: 'Nutritious meals supporting health, academic performance, and overall well-being.', image: '/images/programs/feeding-program.jpg', imageClass: 'object-[center_42%]' },
-  { icon: '🔧', title: 'Vocational Training', desc: 'Hands-on skills fostering self-reliance, entrepreneurship, and sustainable livelihoods.', image: '/images/programs/vocational-training.jpg', imageClass: 'object-[center_38%]' },
-  { icon: '🌿', title: 'Health Ministry', desc: 'Natural health principles, preventive healthcare, and healthy lifestyle education.', image: '/images/programs/health-ministry.jpg', imageClass: 'object-center' },
-  { icon: '📖', title: 'Bible Training', desc: 'Biblical education, discipleship, and character formation for Christian service.', image: '/images/programs/bible-training.jpg', imageClass: 'object-center' },
+  { icon: '🍽️', title: 'Feeding Program', desc: 'Nutritious meals supporting health, academic performance, and overall well-being.', image: '/images/programs/feeding-program.webp', imageClass: 'object-[center_42%]' },
+  { icon: '🔧', title: 'Vocational Training', desc: 'Hands-on skills fostering self-reliance, entrepreneurship, and sustainable livelihoods.', image: '/images/programs/vocational-training.webp', imageClass: 'object-[center_38%]' },
+  { icon: '🌿', title: 'Health Ministry', desc: 'Natural health principles, preventive healthcare, and healthy lifestyle education.', image: '/images/programs/health-ministry.webp', imageClass: 'object-center' },
+  { icon: '📖', title: 'Bible Training', desc: 'Biblical education, discipleship, and character formation for Christian service.', image: '/images/programs/bible-training.webp', imageClass: 'object-center' },
   { icon: '🤝', title: 'Community Outreach', desc: "Evangelism, humanitarian assistance, and reflecting Christ's love in action.", image: '/images/programs/community-outreach.webp', imageClass: 'object-center' },
-  { icon: '🌱', title: 'Agriculture & Farming', desc: 'Sustainable farming, environmental stewardship, and responsible land management.', image: '/images/programs/agriculture-farming.jpg', imageClass: 'object-center' },
+  { icon: '🌱', title: 'Agriculture & Farming', desc: 'Sustainable farming, environmental stewardship, and responsible land management.', image: '/images/programs/agriculture-farming.webp', imageClass: 'object-center' },
 ];
 
 const values = [
@@ -42,7 +42,7 @@ function Hero({ navigate }: { navigate: Navigate }) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/general/hero-bg.jpg')",
+          backgroundImage: "url('/images/general/hero-bg.webp')",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/65 to-forest-dark/35" />
@@ -100,7 +100,7 @@ function WelcomeSection({ navigate }: { navigate: Navigate }) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative min-h-[320px] sm:min-h-[440px] overflow-hidden rounded-2xl shadow-xl">
             <img
-              src="/images/general/welcome-pic.jpg"
+              src="/images/general/welcome-pic.webp"
               alt="Students at Kapsitwet Royal Christian Academy"
               className="absolute inset-0 h-full w-full object-cover"
             />

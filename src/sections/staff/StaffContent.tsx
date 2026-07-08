@@ -18,7 +18,7 @@ const founderAndBoard = [
     role: 'Founder',
     name: 'Diana Booker',
     description: "The Founder provides the vision and guiding principles upon which the institution was established, ensuring the school's mission, values, and Christian identity remain central to all programs and activities.",
-    image: '/images/staff/diana.jpg',
+    image: '/images/staff/diana.webp',
     imageClass: 'object-[center_22%]',
     imageWidth: 576,
     imageHeight: 576,
@@ -53,25 +53,25 @@ const schoolLeadership = [
     name: 'MD. Rael Iteba',
     role: 'Secretary / School Administrator',
     description: 'The Secretary / School Administrator supports daily school operations, communication, records, and administrative coordination.',
-    image: '/images/staff/MD. Rael-Iteba-Secretary.jpg',
+    image: '/images/staff/md-rael-iteba-secretary.webp',
     imageClass: 'object-[center_28%]',
-    imageWidth: 4080,
-    imageHeight: 3060,
+    imageWidth: 1200,
+    imageHeight: 1600,
     variant: 'person' as const,
   },
 ] satisfies StaffMember[];
 
 const teachingFaculty = [
-  { name: 'MD. Valentine Wafula', role: 'Pre-Primary Teacher', image: '/images/staff/MD. Valentine-Wafula-Pre Primary.jpg', imageClass: 'object-[center_10%]', imageWidth: 8160, imageHeight: 6120, variant: 'person' as const },
-  { name: 'MD. Phanlyne Sifuni', role: 'Grade 1 Teacher', image: '/images/staff/MD. Phanlyne-Sifuni-Grade-one-class-Teacher.jpg', imageClass: 'object-[center_30%]', imageWidth: 4080, imageHeight: 3060, variant: 'person' as const },
-  { name: 'Mr. Nevin Abur', role: 'Grade 2 Teacher', image: '/images/staff/Mr. Nevin-Abur-Grade-Two-Class-Teacher.jpg', imageClass: 'object-[center_15%]', imageWidth: 8160, imageHeight: 6120, variant: 'person' as const },
+  { name: 'MD. Valentine Wafula', role: 'Pre-Primary Teacher', image: '/images/staff/md-valentine-wafula-pre-primary.webp', imageClass: 'object-[center_10%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+  { name: 'MD. Phanlyne Sifuni', role: 'Grade 1 Teacher', image: '/images/staff/md-phanlyne-sifuni-grade-one-class-teacher.webp', imageClass: 'object-[center_30%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+  { name: 'Mr. Nevin Abur', role: 'Grade 2 Teacher', image: '/images/staff/mr-nevin-abur-grade-two-class-teacher.webp', imageClass: 'object-[center_15%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
 ] satisfies StaffMember[];
 
 const supportTeam = [
-  { name: 'Mr. Emmanuel Simiyu', role: 'Farm Manager', image: '/images/staff/Mr. Emmanuel-Simiyu-Farm-Manager .jpg', imageClass: 'object-[center_40%]', imageWidth: 4080, imageHeight: 3060, variant: 'nature' as const },
-  { role: 'Farm Workers', image: '/images/staff/Farm-Workers.jpg', imageClass: 'object-[center_38%]', imageWidth: 8160, imageHeight: 6120, variant: 'nature' as const },
-  { role: 'Cook 1', image: '/images/staff/Cook-1.jpg', imageClass: 'object-[center_35%]', imageWidth: 4080, imageHeight: 3060, variant: 'person' as const },
-  { role: 'Cook 2', image: '/images/staff/Cook-2.jpg', imageClass: 'object-[center_10%]', imageWidth: 4080, imageHeight: 3060, variant: 'person' as const },
+  { name: 'Mr. Emmanuel Simiyu', role: 'Farm Manager', image: '/images/staff/mr-emmanuel-simiyu-farm-manager.webp', imageClass: 'object-[center_40%]', imageWidth: 1200, imageHeight: 1600, variant: 'nature' as const },
+  { role: 'Farm Workers', image: '/images/staff/farm-workers.webp', imageClass: 'object-[center_38%]', imageWidth: 1200, imageHeight: 900, variant: 'nature' as const },
+  { role: 'Cook 1', image: '/images/staff/cook-1.webp', imageClass: 'object-[center_35%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+  { role: 'Cook 2', image: '/images/staff/cook-2.webp', imageClass: 'object-[center_10%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
 ] satisfies StaffMember[];
 
 /* Staff page section composition */

@@ -31,8 +31,8 @@ export default function Navbar() {
           <img
             src="/images/general/krca-new-logo.png"
             alt="Kapsitwet Royal Christian Academy"
-            width="1300"
-            height="1327"
+            width="512"
+            height="523"
             className="h-11 w-11 rounded-full bg-white object-contain p-1 border-2 border-gold flex-shrink-0"
           />
           <div className="hidden sm:block">
