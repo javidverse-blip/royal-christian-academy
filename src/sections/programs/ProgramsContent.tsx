@@ -75,7 +75,7 @@ const programs = [
       'Humanitarian assistance programs',
       'Social support and counseling',
     ],
-    image: '/images/programs/community-outreach.png',
+    image: '/images/programs/community-outreach.webp',
     imageClass: 'object-center',
   },
   {
@@ -217,7 +217,7 @@ function StudentLifeSection() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <StudentLifePhoto src="/images/gallery/morning-worship.jpg" alt="Morning Worship" />
-            <StudentLifePhoto src="/images/programs/community-outreach.png" alt="Community Service" />
+            <StudentLifePhoto src="/images/programs/community-outreach.webp" alt="Community Service" />
             <StudentLifePhoto src="/images/programs/health-ministry.jpg" alt="Health Ministry" />
             <StudentLifePhoto src="/images/programs/agriculture-farming.jpg" alt="Farm Projects" />
           </div>

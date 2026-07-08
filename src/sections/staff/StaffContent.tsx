@@ -26,7 +26,7 @@ const leadership = [
 ];
 
 const faculty = [
-  { name: 'Mr. Maxwell Okoth', role: 'Principal', image: '/images/staff/principal.png', imageClass: 'object-[center_32%]', variant: 'person' as const },
+  { name: 'Mr. Maxwell Okoth', role: 'Principal', image: '/images/staff/principal.webp', imageClass: 'object-[center_32%]', variant: 'person' as const },
   { name: 'Teacher Name', role: 'Pre-school Teacher', variant: 'person' as const },
   { name: 'Teacher Name', role: 'Grade 1 Teacher', variant: 'person' as const },
   { name: 'Teacher Name', role: 'Grade 2 Teacher', variant: 'person' as const },

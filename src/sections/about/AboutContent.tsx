@@ -139,7 +139,7 @@ function SchoolStory() {
       <section className="bg-cream">
         <div
           className="relative min-h-[400px] sm:min-h-[430px] overflow-hidden bg-cover bg-[center_30%] sm:bg-[center_65%]"
-          style={{ backgroundImage: 'url("/images/about/school-born.png")' }}
+          style={{ backgroundImage: 'url("/images/about/school-born.webp")' }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/60" />
           <div className="relative z-10 min-h-[400px] sm:min-h-[430px] max-w-4xl mx-auto px-6 py-8 sm:py-10 text-center flex flex-col justify-between items-center">
@@ -194,7 +194,7 @@ function HumbleBeginning() {
               <p>For many Americans, it is difficult to imagine a child reaching fourteen years old without learning to read, never owning a pair of shoes, and living in conditions where basic medical care is out of reach. Yet this was the reality for many children in rural Kenya. And it is why this story begins.</p>
             </div>
             <StoryImage
-              file="humble-beginning.png"
+              file="humble-beginning.webp"
               alt="The fourteen-year-old boy at the beginning of the school story"
               imageClass="object-contain p-2 sm:p-4"
               className="min-h-[32rem] h-full"
@@ -211,7 +211,7 @@ function HumbleBeginning() {
           </div>
           <div className="max-w-5xl mx-auto bg-white rounded-2xl overflow-hidden shadow-xl grid lg:grid-cols-[0.75fr_1.25fr] items-stretch">
            <StoryImage
-  file="classroom-dirt-floor.png"
+  file="classroom-dirt-floor.webp"
   alt="Children learning in the original dirt-floor classroom"
  imageClass="object-contain scale-[1.22] translate-y-[30px]"
   className="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[20rem] h-full w-full bg-white"
@@ -242,7 +242,7 @@ function FaithQuestion() {
               <p>She asked parents who could not afford school fees if they would allow her to teach their children. A few families said yes. Those few children became the beginning of something neither Nancy nor the families could have imagined. The school began on borrowed land. The first classroom was little more than a shed.</p>
             </div>
             <StoryImage
-              file="what-is-in-your-hand.png"
+              file="what-is-in-your-hand.webp"
               alt="A teacher sharing what she had by teaching children"
               imageClass="object-contain scale-[1.22] translate-y-[30px]"
               className="min-h-[22rem] sm:min-h-[26rem] lg:min-h-[30rem] h-full"
@@ -257,7 +257,7 @@ function FaithQuestion() {
           <p className="text-gold text-xl sm:text-2xl font-serif italic mb-8">The floor was only dirt, but the little school represented hope.</p>
           <div className="max-w-6xl mx-auto bg-white rounded-2xl overflow-hidden grid lg:grid-cols-2 text-left shadow-lg items-stretch">
             <StoryImage
-              file="small-school-building.png"
+              file="small-school-building.webp"
               alt="The small building that became the first school"
               imageClass="object-contain scale-[1.22] translate-y-[-50px]"
               className="min-h-[20rem] h-full"
@@ -291,7 +291,7 @@ function MealsSection() {
               <p>Then one day, donors helped purchase shoes for the children.</p>
             </div>
             <StoryImage
-              file="children-received-meals.png"
+              file="children-received-meals.webp"
               alt="Children receiving meals and care at the school"
               imageClass="object-cover object-[center_10%]"
               className="min-h-[22rem] sm:min-h-[26rem] lg:min-h-[30rem] h-full w-full"
@@ -322,7 +322,7 @@ function SaferFuture() {
             <p>But new challenges emerged. Many children needed more than a classroom. Some lived too far away to travel every day. Others came from difficult and unsafe environments. If the school were truly going to protect and serve the children who needed it, more dormitories would have to be built.</p>
           </div>
           <StoryImage
-            file="classroom-meeting-wide.png"
+            file="classroom-meeting-wide.webp"
             alt="A crowded classroom meeting at the growing school"
             imageClass="object-cover object-center"
             className="min-h-[26rem] lg:min-h-[36rem] h-full w-full"
@@ -350,7 +350,7 @@ function BurdenShared() {
             <p>Then she left it in God's hands.</p>
           </div>
           <StoryImage
-            file="woman-praying.png"
+            file="woman-praying.webp"
             alt="Diana praying for provision for the unfinished dormitories"
             imageClass="object-contain p-3 sm:p-5"
             className="min-h-[28rem] h-full"
@@ -365,7 +365,7 @@ function BurdenShared() {
           </div>
           <div className="lg:order-1">
             <StoryImage
-              file="phone-prayer-moment.png"
+              file="phone-prayer-moment.webp"
               alt="The early morning phone call that answered Diana's prayer"
               imageClass="object-contain p-3 sm:p-5"
               className="min-h-[22rem] h-full"
@@ -391,7 +391,7 @@ function AnsweredPrayer() {
         <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-8 lg:gap-14 items-center mb-10">
           <blockquote className="text-gold text-3xl sm:text-4xl font-serif italic text-center lg:text-right">"While we are praying, He is already working on the answer."</blockquote>
           <StoryImage
-            file="children-gathered-outside.png"
+            file="children-gathered-outside.webp"
             alt="Children gathered in prayer outside"
             imageClass="object-contain p-3 sm:p-5"
             className="h-80 sm:h-[28rem]"
@@ -424,7 +424,7 @@ function ContinuingNeed() {
             <p className="text-gold text-lg font-serif font-bold">Remember, the question is not whether God can provide. The question is whether we will listen and respond when He does.</p>
           </div>
           <StoryImage
-            file="students-purple-uniform.png"
+            file="students-purple-uniform.webp"
             alt="Royal Christian Academy students in purple uniforms"
             imageClass="object-cover object-center"
             className="min-h-[28rem] lg:min-h-[36rem] h-full w-full"

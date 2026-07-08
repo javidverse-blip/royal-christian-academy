@@ -7,7 +7,7 @@ const programs = [
   { icon: '🔧', title: 'Vocational Training', desc: 'Hands-on skills fostering self-reliance, entrepreneurship, and sustainable livelihoods.', image: '/images/programs/vocational-training.jpg', imageClass: 'object-[center_38%]' },
   { icon: '🌿', title: 'Health Ministry', desc: 'Natural health principles, preventive healthcare, and healthy lifestyle education.', image: '/images/programs/health-ministry.jpg', imageClass: 'object-center' },
   { icon: '📖', title: 'Bible Training', desc: 'Biblical education, discipleship, and character formation for Christian service.', image: '/images/programs/bible-training.jpg', imageClass: 'object-center' },
-  { icon: '🤝', title: 'Community Outreach', desc: "Evangelism, humanitarian assistance, and reflecting Christ's love in action.", image: '/images/programs/community-outreach.png', imageClass: 'object-center' },
+  { icon: '🤝', title: 'Community Outreach', desc: "Evangelism, humanitarian assistance, and reflecting Christ's love in action.", image: '/images/programs/community-outreach.webp', imageClass: 'object-center' },
   { icon: '🌱', title: 'Agriculture & Farming', desc: 'Sustainable farming, environmental stewardship, and responsible land management.', image: '/images/programs/agriculture-farming.jpg', imageClass: 'object-center' },
 ];
 
