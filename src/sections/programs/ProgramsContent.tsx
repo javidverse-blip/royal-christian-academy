@@ -1,5 +1,6 @@
 import { CheckCircle } from 'lucide-react';
 import PageBanner from '../../components/ui/PageBanner';
+import { usePage } from '../../context/PageContext';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const programs = [
@@ -102,7 +103,7 @@ export default function ProgramsContent() {
       <PageBanner page="programs" />
       <ProgramsIntro />
       <ProgramsList />
-      <StudentLifeSection />
+      <GalleryCta />
     </>
   );
 }
@@ -181,63 +182,28 @@ function ProgramRow({ program, flip }: { program: (typeof programs)[0]; flip: bo
   );
 }
 
-/* Student life section */
-function StudentLifeSection() {
+/* Gallery call to action */
+function GalleryCta() {
+  const { navigate } = usePage();
   const ref = useScrollAnimation();
-  const activities = [
-    'Daily worship programs and chapel services',
-    'Outreach activities in surrounding communities',
-    'Vocational training and practical skill workshops',
-    'Agriculture and organic farming projects',
-    'Sports, fitness, and physical education',
-    'Community service and humanitarian missions',
-    'Educational tours and field learning experiences',
-    'Leadership development and mentorship',
-  ];
+
   return (
-    <section className="section-padding" style={{ background: 'linear-gradient(135deg, #250f5a 0%, #341d6f 100%)' }}>
+    <section className="section-padding bg-cream">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div ref={ref} className="animate-on-scroll">
-            <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">School Life</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white font-serif mb-6 leading-tight">
-              Student Life
-            </h2>
-            <p className="text-white/75 text-base leading-loose mb-8">
-              Student life at Kapsitwet Royal Christian Academy is designed to promote academic excellence, spiritual growth, leadership development, and healthy social interaction. Every day is an opportunity to grow closer to Christ and to one another.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {activities.map((activity, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-gold mt-1 flex-shrink-0">✦</span>
-                  <span className="text-white/75 text-sm">{activity}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <StudentLifePhoto src="/images/gallery/morning-worship.jpg" alt="Morning Worship" />
-            <StudentLifePhoto src="/images/programs/community-outreach.webp" alt="Community Service" />
-            <StudentLifePhoto src="/images/programs/health-ministry.jpg" alt="Health Ministry" />
-            <StudentLifePhoto src="/images/programs/agriculture-farming.jpg" alt="Farm Projects" />
-          </div>
+        <div ref={ref} className="animate-on-scroll text-center max-w-2xl mx-auto">
+          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">See Student Life</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Explore More Moments</h2>
+          <p className="text-gray-500 leading-relaxed mb-8">
+            Visit our gallery to see classroom learning, worship, creativity, gardening, and daily life at Royal Christian Academy.
+          </p>
+          <button
+            onClick={() => navigate('gallery')}
+            className="bg-forest text-white font-semibold px-10 py-4 rounded-full hover:bg-forest-light transition-colors duration-200 shadow-lg"
+          >
+            View More
+          </button>
         </div>
       </div>
     </section>
-  );
-}
-
-
-/* Student life photo tile */
-function StudentLifePhoto({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="h-48 overflow-hidden rounded-xl">
-      <img
-        src={src}
-        alt={alt}
-        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        loading="lazy"
-      />
-    </div>
   );
 }
