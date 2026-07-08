@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { usePage, type Page } from '../../context/PageContext';
 
+/* Footer navigation mirrors the active route list. */
 const quickLinks: { label: string; page: Page }[] = [
   { label: 'Home', page: 'home' },
   { label: 'About Us', page: 'about' },
@@ -10,6 +11,8 @@ const quickLinks: { label: string; page: Page }[] = [
   { label: 'Gallery', page: 'gallery' },
 ];
 
+
+/* Shared footer with school identity and direct contact details. */
 export default function Footer() {
   const { navigate } = usePage();
 
@@ -20,7 +23,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <button onClick={() => navigate('home')} className="flex items-center gap-3 mb-5 text-left">
               <img
-                src="/Logo.jpg"
+                src="/images/branding/logo.jpg"
                 alt="Kapsitwet Royal Christian Academy"
                 className="h-14 w-14 rounded-full border-2 border-gold object-cover flex-shrink-0"
               />

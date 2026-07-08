@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePage, type Page } from '../../context/PageContext';
 
+/* Main navigation shared by desktop and mobile menus. */
 const navLinks: { label: string; page: Page; href: string }[] = [
   { label: 'Home', page: 'home', href: '/' },
   { label: 'About', page: 'about', href: '/about' },
@@ -11,6 +12,8 @@ const navLinks: { label: string; page: Page; href: string }[] = [
   { label: 'Gallery', page: 'gallery', href: '/gallery' },
 ];
 
+
+/* Fixed site navigation and mobile menu. */
 export default function Navbar() {
   const { currentPage, navigate } = usePage();
   const [open, setOpen] = useState(false);
@@ -26,7 +29,7 @@ export default function Navbar() {
           className="flex items-center gap-3 text-left flex-shrink-0"
         >
           <img
-            src="/Logo.jpg"
+            src="/images/branding/logo.jpg"
             alt="Kapsitwet Royal Christian Academy"
             className="h-11 w-11 rounded-full object-cover border-2 border-gold flex-shrink-0"
           />

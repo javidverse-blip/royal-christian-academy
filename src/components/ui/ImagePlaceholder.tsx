@@ -9,6 +9,7 @@ interface ImagePlaceholderProps {
   rounded?: string;
 }
 
+/* Brand-safe visual treatments for staff or content awaiting photography. */
 const variantConfig: Record<PlaceholderVariant, { icon: React.ElementType; gradient: string; iconColor: string }> = {
   person: {
     icon: User,
@@ -52,6 +53,8 @@ const variantConfig: Record<PlaceholderVariant, { icon: React.ElementType; gradi
   },
 };
 
+
+/* Reusable placeholder that preserves card dimensions until media arrives. */
 export default function ImagePlaceholder({
   variant = 'program',
   label,

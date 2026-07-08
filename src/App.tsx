@@ -9,6 +9,7 @@ import AdmissionsPage from './pages/AdmissionsPage';
 import StaffPage from './pages/StaffPage';
 import GalleryPage from './pages/GalleryPage';
 
+/* Canonical browser paths for each client-side route. */
 const pagePaths: Record<Page, string> = {
   home: '/',
   about: '/about',
@@ -18,11 +19,15 @@ const pagePaths: Record<Page, string> = {
   gallery: '/gallery',
 };
 
+
+/* Resolve the current browser pathname to a known page. */
 function pageFromPath(pathname: string): Page {
   const segment = pathname.replace(/^\/+|\/+$/g, '');
   return segment in pagePaths ? (segment as Page) : 'home';
 }
 
+
+/* Render the route-level page selected by the page context. */
 function PageContent({ page }: { page: Page }) {
   switch (page) {
     case 'home':       return <HomePage />;
@@ -35,6 +40,8 @@ function PageContent({ page }: { page: Page }) {
   }
 }
 
+
+/* Application shell and lightweight history-based routing. */
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>(() => pageFromPath(window.location.pathname));
 

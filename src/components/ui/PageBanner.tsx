@@ -1,6 +1,7 @@
 import { ChevronRight } from 'lucide-react';
 import { usePage, type Page } from '../../context/PageContext';
 
+/* Route-specific text for the reusable interior-page banner. */
 const bannerConfig: Record<Exclude<Page, 'home'>, { title: string; subtitle: string }> = {
   about: {
     title: 'About Us',
@@ -24,6 +25,8 @@ const bannerConfig: Record<Exclude<Page, 'home'>, { title: string; subtitle: str
   },
 };
 
+
+/* Shared branded banner used by every non-home route. */
 export default function PageBanner({ page }: { page: Exclude<Page, 'home'> }) {
   const { navigate } = usePage();
   const config = bannerConfig[page];

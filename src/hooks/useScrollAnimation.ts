@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+/* Reveal an element once when it enters the viewport. */
 export function useScrollAnimation() {
   const ref = useRef<HTMLDivElement>(null);
 

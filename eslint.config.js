@@ -19,10 +19,19 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      // The installed TypeScript ESLint bridge is incompatible with ESLint's newer base rule.
+      '@typescript-eslint/no-unused-expressions': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
     },
-  }
+  },
+  {
+    // Context modules intentionally export route state and hooks, not React components.
+    files: ['src/context/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
 );
