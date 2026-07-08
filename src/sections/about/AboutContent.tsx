@@ -210,12 +210,12 @@ function HumbleBeginning() {
             <p className="text-gold text-xl sm:text-2xl font-serif italic">Children who wanted to learn were being left behind.</p>
           </div>
           <div className="max-w-5xl mx-auto bg-white rounded-2xl overflow-hidden shadow-xl grid lg:grid-cols-[0.75fr_1.25fr] items-stretch">
-            <StoryImage
-              file="classroom-dirt-floor.png"
-              alt="Children learning in the original dirt-floor classroom"
-              imageClass="object-contain scale-[1.22]"
-              className="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[20rem] h-full w-full bg-white"
-            />
+           <StoryImage
+  file="classroom-dirt-floor.png"
+  alt="Children learning in the original dirt-floor classroom"
+ imageClass="object-contain scale-[1.22] translate-y-[30px]"
+  className="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[20rem] h-full w-full bg-white"
+/>
             <div className="p-6 sm:p-8 lg:p-10 text-gray-700 leading-8 space-y-5">
               <p>After COVID, many Kenyan families were pushed even deeper into poverty. Jobs disappeared. Food became scarce. School fees became impossible for many parents to afford. Children who wanted to learn were left behind, not because they lacked ability, but because their families simply could not pay.</p>
               <p>At the same time, a woman named Nancy was facing struggles of her own. A teacher and mother, she was trying to provide for her family after her husband left. Resources were limited. The future was uncertain.</p>
@@ -244,7 +244,7 @@ function FaithQuestion() {
             <StoryImage
               file="what-is-in-your-hand.png"
               alt="A teacher sharing what she had by teaching children"
-              imageClass="object-cover object-center"
+              imageClass="object-contain scale-[1.22] translate-y-[30px]"
               className="min-h-[22rem] sm:min-h-[26rem] lg:min-h-[30rem] h-full"
             />
           </div>
@@ -259,8 +259,8 @@ function FaithQuestion() {
             <StoryImage
               file="small-school-building.png"
               alt="The small building that became the first school"
-              imageClass="object-contain p-4 sm:p-6"
-              className="min-h-[24rem] h-full"
+              imageClass="object-contain scale-[1.22] translate-y-[-50px]"
+              className="min-h-[20rem] h-full"
             />
             <div className="p-6 sm:p-9 lg:p-11 text-gray-700 leading-8 space-y-5">
               <p>The floor was only dirt. The structure offered little protection from the weather. Food was scarce. Some mornings, the children received only a cup of porridge. Yet every day they came. For children who had been locked out of education, the little school represented hope.</p>
@@ -293,7 +293,7 @@ function MealsSection() {
             <StoryImage
               file="children-received-meals.png"
               alt="Children receiving meals and care at the school"
-              imageClass="object-cover object-[center_22%]"
+              imageClass="object-cover object-[center_10%]"
               className="min-h-[22rem] sm:min-h-[26rem] lg:min-h-[30rem] h-full w-full"
             />
           </div>
@@ -368,7 +368,7 @@ function BurdenShared() {
               file="phone-prayer-moment.png"
               alt="The early morning phone call that answered Diana's prayer"
               imageClass="object-contain p-3 sm:p-5"
-              className="min-h-[28rem] h-full"
+              className="min-h-[22rem] h-full"
             />
           </div>
         </div>
