@@ -42,7 +42,7 @@ function Hero({ navigate }: { navigate: Navigate }) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/home/hero-bg.jpg')",
+          backgroundImage: "url('/images/general/hero-bg.jpg')",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/65 to-forest-dark/35" />
@@ -100,7 +100,7 @@ function WelcomeSection({ navigate }: { navigate: Navigate }) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative min-h-[320px] sm:min-h-[440px] overflow-hidden rounded-2xl shadow-xl">
             <img
-              src="/images/home/welcome-pic.jpg"
+              src="/images/general/welcome-pic.jpg"
               alt="Students at Kapsitwet Royal Christian Academy"
               className="absolute inset-0 h-full w-full object-cover"
             />

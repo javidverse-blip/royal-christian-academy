@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import PageBanner from '../../components/ui/PageBanner';
 
 const activities = [
-  { title: 'Morning Worship', caption: 'Students beginning the day in prayer, worship, and reflection.', image: '/images/home/morning-worship.jpg' },
+  { title: 'Morning Worship', caption: 'Students beginning the day in prayer, worship, and reflection.', image: '/images/gallery/morning-worship.jpg' },
   { title: 'Community Outreach', caption: "Learners serving others and putting Christ's love into action.", image: '/images/programs/community-outreach.png' },
   { title: 'Health Ministry', caption: 'Practical health education supporting whole-person wellness.', image: '/images/programs/health-ministry.jpg' },
   { title: 'Agriculture Projects', caption: 'Hands-on learning through farming and responsible stewardship.', image: '/images/programs/agriculture-farming.jpg' },

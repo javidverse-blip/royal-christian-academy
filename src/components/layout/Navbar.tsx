@@ -29,7 +29,7 @@ export default function Navbar() {
           className="flex items-center gap-3 text-left flex-shrink-0"
         >
           <img
-            src="/images/branding/logo.jpg"
+            src="/images/general/logo.jpg"
             alt="Kapsitwet Royal Christian Academy"
             className="h-11 w-11 rounded-full object-cover border-2 border-gold flex-shrink-0"
           />

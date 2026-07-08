@@ -216,7 +216,7 @@ function StudentLifeSection() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <StudentLifePhoto src="/images/home/morning-worship.jpg" alt="Morning Worship" />
+            <StudentLifePhoto src="/images/gallery/morning-worship.jpg" alt="Morning Worship" />
             <StudentLifePhoto src="/images/programs/community-outreach.png" alt="Community Service" />
             <StudentLifePhoto src="/images/programs/health-ministry.jpg" alt="Health Ministry" />
             <StudentLifePhoto src="/images/programs/agriculture-farming.jpg" alt="Farm Projects" />
