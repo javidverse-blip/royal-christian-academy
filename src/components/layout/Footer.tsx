@@ -23,9 +23,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <button onClick={() => navigate('home')} className="flex items-center gap-3 mb-5 text-left">
               <img
-                src="/images/general/logo.jpg"
+                src="/images/general/krca-new-logo.png"
                 alt="Kapsitwet Royal Christian Academy"
-                className="h-14 w-14 rounded-full border-2 border-gold object-cover flex-shrink-0"
+                width="1300"
+                height="1327"
+                className="h-14 w-14 rounded-full bg-white border-2 border-gold object-contain p-1 flex-shrink-0"
               />
               <div>
                 <p className="text-gold font-bold text-base leading-snug font-serif">Kapsitwet Royal Christian Academy</p>

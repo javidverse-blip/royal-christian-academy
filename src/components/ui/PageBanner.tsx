@@ -43,6 +43,16 @@ export default function PageBanner({ page }: { page: Exclude<Page, 'home'> }) {
             backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(201,160,39,0.8) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 0%, transparent 50%)',
           }}
         />
+        {page === 'about' && (
+          <img
+            src="/images/general/krca-new-logo.png"
+            alt=""
+            width="1300"
+            height="1327"
+            aria-hidden="true"
+            className="pointer-events-none absolute right-6 top-[54%] hidden w-40 -translate-y-1/2 opacity-[0.08] mix-blend-screen sm:block md:w-48 lg:right-16 lg:w-56 xl:w-64"
+          />
+        )}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
           <nav className="flex items-center gap-2 text-white/50 text-sm mb-6">
             <button

@@ -29,9 +29,11 @@ export default function Navbar() {
           className="flex items-center gap-3 text-left flex-shrink-0"
         >
           <img
-            src="/images/general/logo.jpg"
+            src="/images/general/krca-new-logo.png"
             alt="Kapsitwet Royal Christian Academy"
-            className="h-11 w-11 rounded-full object-cover border-2 border-gold flex-shrink-0"
+            width="1300"
+            height="1327"
+            className="h-11 w-11 rounded-full bg-white object-contain p-1 border-2 border-gold flex-shrink-0"
           />
           <div className="hidden sm:block">
             <p className="text-gold font-bold text-sm leading-tight font-serif">Kapsitwet Royal Christian Academy</p>
