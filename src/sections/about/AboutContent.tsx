@@ -138,10 +138,10 @@ function SchoolStory() {
     <>
       <section className="bg-cream">
         <div
-          className="relative min-h-[400px] sm:min-h-[430px] overflow-hidden bg-cover bg-[center_30%] sm:bg-[center_34%]"
+          className="relative min-h-[400px] sm:min-h-[430px] overflow-hidden bg-cover bg-[center_30%] sm:bg-[center_65%]"
           style={{ backgroundImage: 'url("/images/about/school-born.png")' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/60" />
           <div className="relative z-10 min-h-[400px] sm:min-h-[430px] max-w-4xl mx-auto px-6 py-8 sm:py-10 text-center flex flex-col justify-between items-center">
             <div>
               <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3 text-shadow">Our Story</p>
@@ -214,7 +214,7 @@ function HumbleBeginning() {
               file="classroom-dirt-floor.png"
               alt="Children learning in the original dirt-floor classroom"
               imageClass="object-contain scale-[1.22]"
-              className="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[24rem] h-full w-full bg-white"
+              className="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[20rem] h-full w-full bg-white"
             />
             <div className="p-6 sm:p-8 lg:p-10 text-gray-700 leading-8 space-y-5">
               <p>After COVID, many Kenyan families were pushed even deeper into poverty. Jobs disappeared. Food became scarce. School fees became impossible for many parents to afford. Children who wanted to learn were left behind, not because they lacked ability, but because their families simply could not pay.</p>
