@@ -1,4 +1,4 @@
-import { ChevronDown, BookOpen, Sprout, Heart, Users, Activity, Shield } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { usePage, type Navigate } from '../../context/PageContext';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
@@ -11,13 +11,9 @@ const programs = [
   { icon: '🌱', title: 'Agriculture & Farming', desc: 'Sustainable farming, environmental stewardship, and responsible land management.', image: '/images/programs/agriculture-farming.webp', imageClass: 'object-center' },
 ];
 
-const values = [
-  { icon: Heart, label: 'Love' },
-  { icon: Shield, label: 'Excellence' },
-  { icon: Users, label: 'Respect' },
-  { icon: BookOpen, label: 'Faith in Christ' },
-  { icon: Activity, label: 'Discipleship' },
-  { icon: Sprout, label: 'Service' },
+const studentLife = [
+  { title: 'Pre-primary', caption: 'Young learners growing together in a safe, joyful classroom environment.', image: '/images/gallery/pre-primary.webp', imageClass: 'object-[center_44%]' },
+  { title: 'Grade 1', caption: 'Early primary students building confidence through guided learning.', image: '/images/gallery/grade-one.webp', imageClass: 'object-[center_42%]' },
 ];
 
 /* Homepage section composition */
@@ -27,9 +23,9 @@ export default function HomeContent() {
     <>
       <Hero navigate={navigate} />
       <WelcomeSection navigate={navigate} />
-      <MissionVision navigate={navigate} />
+      <MissionVision />
       <ProgramsPreview navigate={navigate} />
-      <ValuesSection />
+      <StudentLifeSection navigate={navigate} />
       <CtaSection navigate={navigate} />
     </>
   );
@@ -71,10 +67,10 @@ function Hero({ navigate }: { navigate: Navigate }) {
               Learn More About Us
             </button>
             <button
-              onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
+              onClick={() => navigate('admissions')}
               className="border-2 border-gold text-gold font-semibold px-10 py-4 rounded-full text-base hover:bg-gold hover:text-forest-dark transition-all duration-300"
             >
-              Book a Visit
+              Admissions
             </button>
           </div>
         </div>
@@ -121,16 +117,10 @@ function WelcomeSection({ navigate }: { navigate: Navigate }) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => navigate('about')}
+                onClick={() => navigate('our-story')}
                 className="bg-forest text-white font-semibold px-8 py-3 rounded-full hover:bg-forest-light transition-colors duration-200"
               >
-                Learn More About Us
-              </button>
-              <button
-                onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
-                className="border-2 border-forest text-forest font-semibold px-8 py-3 rounded-full hover:bg-forest hover:text-white transition-colors duration-200"
-              >
-                Book a Visit
+                Our Story
               </button>
             </div>
           </div>
@@ -141,7 +131,7 @@ function WelcomeSection({ navigate }: { navigate: Navigate }) {
 }
 
 /* Mission and vision section */
-function MissionVision({ navigate }: { navigate: Navigate }) {
+function MissionVision() {
   const ref = useScrollAnimation();
   return (
     <section className="section-padding" style={{ background: 'linear-gradient(135deg, #341d6f 0%, #4a2d8f 100%)' }}>
@@ -150,7 +140,7 @@ function MissionVision({ navigate }: { navigate: Navigate }) {
           <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Our Foundation</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-serif">Mission &amp; Vision</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-10">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           <MvCard
             label="Our Mission"
             text="To provide Christian education that develops the mind, body, and spirit for this life and the life to come."
@@ -161,14 +151,6 @@ function MissionVision({ navigate }: { navigate: Navigate }) {
             text="Victory in Jesus — raising a generation of Kingdom champions rooted in faith, knowledge, and character."
             delay={120}
           />
-        </div>
-        <div className="text-center">
-          <button
-            onClick={() => navigate('about')}
-            className="border-2 border-gold text-gold font-semibold px-8 py-3 rounded-full hover:bg-gold hover:text-forest-dark transition-all duration-300"
-          >
-            Read Our Full Story
-          </button>
         </div>
       </div>
     </section>
@@ -251,20 +233,29 @@ function ProgramCard({ program, delay }: { program: (typeof programs)[0]; delay:
   );
 }
 
-/* Values section */
-function ValuesSection() {
+/* Student life preview section */
+function StudentLifeSection({ navigate }: { navigate: Navigate }) {
   const ref = useScrollAnimation();
   return (
     <section className="section-padding bg-warm">
       <div className="max-w-7xl mx-auto">
         <div ref={ref} className="animate-on-scroll text-center mb-10 sm:mb-12">
-          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">What We Stand For</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif">Our Core Values</h2>
+          <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Life at Our School</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-4">Student Life</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">A glimpse of early learning at Royal Christian Academy, where children grow in confidence, care, and faith.</p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-          {values.map((v, i) => (
-            <ValueBadge key={i} value={v} delay={i * 70} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-10">
+          {studentLife.map((activity, i) => (
+            <StudentLifeCard key={activity.title} activity={activity} delay={i * 90} />
           ))}
+        </div>
+        <div className="text-center">
+          <button
+            onClick={() => navigate('gallery')}
+            className="bg-forest text-white font-semibold px-10 py-4 rounded-full hover:bg-forest-light transition-colors duration-200 shadow-lg"
+          >
+            See Gallery
+          </button>
         </div>
       </div>
     </section>
@@ -272,21 +263,30 @@ function ValuesSection() {
 }
 
 
-/* School value badge */
-function ValueBadge({ value, delay }: { value: (typeof values)[0]; delay: number }) {
+/* Homepage student life card */
+function StudentLifeCard({ activity, delay }: { activity: (typeof studentLife)[0]; delay: number }) {
   const ref = useScrollAnimation();
-  const Icon = value.icon;
   return (
-    <div
+    <article
       ref={ref}
-      className="animate-on-scroll text-center bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100 hover-lift"
+      className="animate-on-scroll group hover-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-forest flex items-center justify-center mx-auto mb-3">
-        <Icon size={18} className="text-gold" />
+      <div className="h-80 sm:h-96 lg:h-[26rem] overflow-hidden">
+        <img
+          src={activity.image}
+          alt={activity.title}
+          width="1200"
+          height="900"
+          className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${activity.imageClass}`}
+          loading="lazy"
+        />
       </div>
-      <p className="text-forest text-xs sm:text-sm font-semibold font-serif leading-tight">{value.label}</p>
-    </div>
+      <div className="p-5">
+        <h3 className="font-bold text-forest text-lg font-serif">{activity.title}</h3>
+        <p className="text-gray-500 text-sm leading-relaxed mt-2">{activity.caption}</p>
+      </div>
+    </article>
   );
 }
 
@@ -300,23 +300,17 @@ function CtaSection({ navigate }: { navigate: Navigate }) {
         <div ref={ref} className="animate-on-scroll">
           <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-4">Join Our Family</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-5 leading-tight">
-            Ready to Be Part of<br />Something Greater?
+            Ready to be Part of Us?
           </h2>
           <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto mb-10">
             We warmly welcome you to the Kapsitwet Royal Christian Academy family and pray that God richly blesses you as you explore the opportunities available within our school community.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <button
-              onClick={() => navigate('admissions')}
+              onClick={() => navigate('about')}
               className="bg-forest text-white font-bold px-10 py-4 rounded-full hover:bg-forest-light hover:scale-105 transition-all duration-300 shadow-lg"
             >
-              Apply for Admission
-            </button>
-            <button
-              onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
-              className="border-2 border-forest text-forest font-semibold px-10 py-4 rounded-full hover:bg-forest hover:text-white transition-all duration-300"
-            >
-              Contact Us
+              About Us
             </button>
           </div>
         </div>

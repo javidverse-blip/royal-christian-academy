@@ -5,6 +5,7 @@ import { usePage, type Page } from '../../context/PageContext';
 const quickLinks: { label: string; page: Page }[] = [
   { label: 'Home', page: 'home' },
   { label: 'About Us', page: 'about' },
+  { label: 'Our Story', page: 'our-story' },
   { label: 'Programs', page: 'programs' },
   { label: 'Admissions', page: 'admissions' },
   { label: 'Our Staff', page: 'staff' },

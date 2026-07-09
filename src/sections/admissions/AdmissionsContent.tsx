@@ -205,7 +205,7 @@ function FeesAndDocuments() {
               Fees may be paid per term or according to arrangements approved by the school administration. We are committed to making quality Christian education accessible.
             </p>
             <a
-              href="mailto:royalchristianacademy07@gmail.com"
+              href="mailto:royalchristianacademy07@gmail.com?subject=Request%20Fee%20Structure"
               className="inline-flex items-center gap-2 bg-forest text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-forest-light transition-colors"
             >
               <Mail size={14} />

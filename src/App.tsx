@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import OurStoryPage from './pages/OurStoryPage';
 import ProgramsPage from './pages/ProgramsPage';
 import AdmissionsPage from './pages/AdmissionsPage';
 import StaffPage from './pages/StaffPage';
@@ -13,6 +14,7 @@ import GalleryPage from './pages/GalleryPage';
 const pagePaths: Record<Page, string> = {
   home: '/',
   about: '/about',
+  'our-story': '/our-story',
   programs: '/programs',
   admissions: '/admissions',
   staff: '/staff',
@@ -32,6 +34,7 @@ function PageContent({ page }: { page: Page }) {
   switch (page) {
     case 'home':       return <HomePage />;
     case 'about':      return <AboutPage />;
+    case 'our-story':  return <OurStoryPage />;
     case 'programs':   return <ProgramsPage />;
     case 'admissions': return <AdmissionsPage />;
     case 'staff':      return <StaffPage />;

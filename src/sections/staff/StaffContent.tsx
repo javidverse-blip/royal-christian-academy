@@ -1,5 +1,6 @@
 import PageBanner from '../../components/ui/PageBanner';
 import ImagePlaceholder from '../../components/ui/ImagePlaceholder';
+import { usePage } from '../../context/PageContext';
 
 type StaffMember = {
   role: string;
@@ -7,6 +8,7 @@ type StaffMember = {
   phone?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   imageClass?: string;
   imageWidth?: number;
   imageHeight?: number;
@@ -17,16 +19,17 @@ const founderAndBoard = [
   {
     role: 'Founder',
     name: 'Diana Booker',
-    description: "The Founder provides the vision and guiding principles upon which the institution was established, ensuring the school's mission, values, and Christian identity remain central to all programs and activities.",
-    image: '/images/staff/diana.webp',
-    imageClass: 'object-[center_22%]',
-    imageWidth: 576,
-    imageHeight: 576,
+    description: "The Founder provides the vision and guiding principles upon which the institution was established. The Founder ensures that the school's mission, values, and Christian identity remain central to all programs and activities.",
+    image: '/images/staff/diana-with-husband.jpeg',
+    imageAlt: 'Diana Booker with her husband',
+    imageClass: 'object-[center_28%]',
     variant: 'person' as const,
   },
   {
     role: 'Board of Directors',
-    description: "The Board provides governance, oversight, and strategic direction. The Board works closely with the administration to ensure accountability, sustainability, and the fulfillment of the institution's mission.",
+    description: "The Board of Directors provides governance, oversight, and strategic direction for the school. The Board works closely with the administration to ensure accountability, sustainability, and the fulfillment of the institution's mission and objectives.",
+    image: '/images/staff/board-of-directors.jpeg',
+    imageClass: 'object-[center_35%]',
     variant: 'building' as const,
   },
 ] satisfies StaffMember[];
@@ -36,13 +39,14 @@ const schoolLeadership = [
     role: 'Director',
     name: 'Mr. Kelzy Origi',
     phone: '(+254)-715-726-929',
-    description: "The Director oversees overall administration, strategic planning, and development, ensuring all departments work effectively together to achieve the school's goals and vision.",
+    description: "The Director oversees the overall administration, strategic planning, and development of the institution. The Director ensures that all departments work together effectively to achieve the school's goals and vision.",
     variant: 'person' as const,
   },
   {
     role: 'Principal',
     name: 'Mr. Maxwell Okoth',
-    description: 'The Principal oversees the daily leadership of the school, supporting academic growth, student care, staff coordination, and the overall learning environment.',
+    phone: '(+254)-724-403-284',
+    description: 'The Principal provides leadership in academic and student affairs, promoting excellence in teaching, learning, discipline, and character development. The Principal ensures a positive learning environment that supports student success.',
     image: '/images/staff/principal.webp',
     imageClass: 'object-[center_32%]',
     imageWidth: 958,
@@ -51,8 +55,8 @@ const schoolLeadership = [
   },
   {
     name: 'MD. Rael Iteba',
-    role: 'Secretary / School Administrator',
-    description: 'The Secretary / School Administrator supports daily school operations, communication, records, and administrative coordination.',
+    role: 'Secretary',
+    description: 'The Secretary manages administrative coordination, communication, and record-keeping, supporting the efficient operation of the school and serving as a key point of contact for parents and stakeholders.',
     image: '/images/staff/md-rael-iteba-secretary.webp',
     imageClass: 'object-[center_28%]',
     imageWidth: 1200,
@@ -70,8 +74,8 @@ const teachingFaculty = [
 const supportTeam = [
   { name: 'Mr. Emmanuel Simiyu', role: 'Farm Manager', image: '/images/staff/mr-emmanuel-simiyu-farm-manager.webp', imageClass: 'object-[center_40%]', imageWidth: 1200, imageHeight: 1600, variant: 'nature' as const },
   { role: 'Farm Workers', image: '/images/staff/farm-workers.webp', imageClass: 'object-[center_38%]', imageWidth: 1200, imageHeight: 900, variant: 'nature' as const },
-  { role: 'Cook 1', image: '/images/staff/cook-1.webp', imageClass: 'object-[center_35%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
-  { role: 'Cook 2', image: '/images/staff/cook-2.webp', imageClass: 'object-[center_10%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+  { name: 'Emilly Simiyu', role: 'Cook 1', image: '/images/staff/cook-1.webp', imageClass: 'object-[center_35%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+  { name: 'Colletty Watoya', role: 'Cook 2', image: '/images/staff/cook-2.webp', imageClass: 'object-[center_10%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
 ] satisfies StaffMember[];
 
 /* Staff page section composition */
@@ -112,6 +116,7 @@ export default function StaffContent() {
         background="bg-cream"
         cardBackground="bg-white"
       />
+      <GalleryCta />
     </>
   );
 }
@@ -167,7 +172,7 @@ function StaffCard({ member, cardBackground, photoHeight }: { member: StaffMembe
       {member.image ? (
         <img
           src={member.image}
-          alt={member.name ? `${member.name}, ${member.role}` : member.role}
+          alt={member.imageAlt ?? (member.name ? `${member.name}, ${member.role}` : member.role)}
           width={member.imageWidth}
           height={member.imageHeight}
           sizes="(min-width: 1280px) 280px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -186,5 +191,28 @@ function StaffCard({ member, cardBackground, photoHeight }: { member: StaffMembe
         {member.description && <p className="text-gray-500 text-sm leading-relaxed mt-3 flex-1">{member.description}</p>}
       </div>
     </article>
+  );
+}
+
+/* Bottom call to action for the gallery route */
+function GalleryCta() {
+  const { navigate } = usePage();
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="max-w-5xl mx-auto rounded-2xl bg-forest px-6 py-10 sm:px-10 sm:py-12 text-center shadow-lg">
+        <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Life at Our School</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white font-serif mb-5">See Our School Community in Action</h2>
+        <p className="text-white/80 leading-8 max-w-2xl mx-auto mb-8">
+          Explore moments from classroom learning, worship, gardening, student activities, and daily life at Royal Christian Academy.
+        </p>
+        <button
+          onClick={() => navigate('gallery')}
+          className="inline-flex w-full sm:w-auto items-center justify-center bg-gold text-forest font-bold px-8 py-3.5 rounded-full hover:bg-gold-light transition-colors"
+        >
+          View Gallery
+        </button>
+      </div>
+    </section>
   );
 }

@@ -5,7 +5,8 @@ import { usePage, type Page } from '../../context/PageContext';
 /* Main navigation shared by desktop and mobile menus. */
 const navLinks: { label: string; page: Page; href: string }[] = [
   { label: 'Home', page: 'home', href: '/' },
-  { label: 'About', page: 'about', href: '/about' },
+  { label: 'About Us', page: 'about', href: '/about' },
+  { label: 'Our Story', page: 'our-story', href: '/our-story' },
   { label: 'Programs', page: 'programs', href: '/programs' },
   { label: 'Admissions', page: 'admissions', href: '/admissions' },
   { label: 'Staff', page: 'staff', href: '/staff' },
