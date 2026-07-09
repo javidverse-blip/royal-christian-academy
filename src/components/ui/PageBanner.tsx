@@ -53,6 +53,7 @@ export default function PageBanner({ page }: { page: Exclude<Page, 'home'> }) {
           width="512"
           height="523"
           aria-hidden="true"
+          decoding="async"
           className="pointer-events-none absolute right-6 top-[54%] hidden w-40 -translate-y-1/2 opacity-[0.08] mix-blend-screen sm:block md:w-48 lg:right-16 lg:w-56 xl:w-64"
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-20">

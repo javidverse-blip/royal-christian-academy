@@ -47,26 +47,34 @@ const upcomingProjects = [
   {
     title: 'Boys Dorm',
     description: 'A safe and supportive boarding space for boys who travel long distances or need secure accommodation.',
-    image: '/images/gallery/boys-dorm.jpeg',
+    image: '/images/gallery/boys-dorm.webp',
     imageClass: 'object-cover object-center',
+    width: 1280,
+    height: 960,
   },
   {
     title: 'Girls Dorm',
     description: 'A secure and caring dormitory space for girls, helping protect their dignity, safety, and learning environment.',
-    image: '/images/gallery/girls-dorm.jpeg',
+    image: '/images/gallery/girls-dorm.webp',
     imageClass: 'object-cover object-center',
+    width: 1280,
+    height: 960,
   },
   {
     title: 'School Kitchen',
     description: 'A better-equipped kitchen to prepare daily meals and support the school feeding program.',
-    image: '/images/gallery/kitchen-improve.jpeg',
+    image: '/images/gallery/kitchen-improve.webp',
     imageClass: 'object-cover object-center',
+    width: 1280,
+    height: 960,
   },
   {
     title: 'Land',
     description: 'Support toward the remaining balance on the school property, helping secure the future home of the academy.',
-    image: '/images/gallery/property-land.jpeg',
+    image: '/images/gallery/property-land.webp',
     imageClass: 'object-cover object-center',
+    width: 1280,
+    height: 571,
   },
 ];
 
@@ -153,8 +161,8 @@ export default function GalleryContent() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  width="1200"
-                  height="900"
+                  width={project.width}
+                  height={project.height}
                   sizes="(min-width: 1024px) 592px, (min-width: 768px) 50vw, 100vw"
                   decoding="async"
                   className={`h-72 sm:h-80 lg:h-96 w-full transition-transform duration-500 group-hover:scale-[1.02] ${project.imageClass}`}
@@ -175,7 +183,7 @@ export default function GalleryContent() {
               Your support helps provide safe spaces, daily meals, secure facilities, and a stronger future for every learner.
             </p>
             <a
-              href="mailto:royalchristianacademy07@gmail.com?subject=Support%20an%20Upcoming%20Project"
+              href="mailto:royalchristianacademy07@gmail.com?subject=Contact%20Royal%20Christian%20Academy"
               className="inline-flex items-center justify-center gap-2 bg-gold text-forest font-bold px-8 py-3.5 rounded-full hover:bg-gold-light transition-colors"
             >
               Support Our Projects <ArrowRight size={17} />

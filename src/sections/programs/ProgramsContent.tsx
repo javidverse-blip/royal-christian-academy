@@ -18,6 +18,8 @@ const programs = [
     ],
     image: '/images/programs/feeding-program.webp',
     imageClass: 'object-[center_42%]',
+    imageWidth: 744,
+    imageHeight: 720,
   },
   {
     number: '02',
@@ -33,6 +35,8 @@ const programs = [
     ],
     image: '/images/programs/vocational-training.webp',
     imageClass: 'object-[center_38%]',
+    imageWidth: 1146,
+    imageHeight: 1050,
   },
   {
     number: '03',
@@ -48,6 +52,8 @@ const programs = [
     ],
     image: '/images/programs/health-ministry.webp',
     imageClass: 'object-center',
+    imageWidth: 1200,
+    imageHeight: 900,
   },
   {
     number: '04',
@@ -63,6 +69,8 @@ const programs = [
     ],
     image: '/images/programs/bible-training.webp',
     imageClass: 'object-center',
+    imageWidth: 1200,
+    imageHeight: 675,
   },
   {
     number: '05',
@@ -78,6 +86,8 @@ const programs = [
     ],
     image: '/images/programs/community-outreach.webp',
     imageClass: 'object-center',
+    imageWidth: 1200,
+    imageHeight: 828,
   },
   {
     number: '06',
@@ -93,6 +103,8 @@ const programs = [
     ],
     image: '/images/programs/agriculture-farming.webp',
     imageClass: 'object-center',
+    imageWidth: 1200,
+    imageHeight: 900,
   },
 ];
 
@@ -153,6 +165,10 @@ function ProgramRow({ program, flip }: { program: (typeof programs)[0]; flip: bo
           <img
             src={program.image}
             alt={program.title}
+            width={program.imageWidth}
+            height={program.imageHeight}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            decoding="async"
             className={`h-80 lg:h-full min-h-80 w-full object-cover ${program.imageClass}`}
             loading="lazy"
           />

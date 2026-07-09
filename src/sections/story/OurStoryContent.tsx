@@ -1,6 +1,19 @@
 import PageBanner from '../../components/ui/PageBanner';
 import { usePage } from '../../context/PageContext';
 
+const storyImageMeta: Record<string, { width: number; height: number }> = {
+  'humble-beginning.webp': { width: 1080, height: 1080 },
+  'classroom-dirt-floor.webp': { width: 1024, height: 1536 },
+  'what-is-in-your-hand.webp': { width: 1080, height: 1080 },
+  'small-school-building.webp': { width: 1122, height: 1402 },
+  'children-received-meals.webp': { width: 1122, height: 1402 },
+  'classroom-meeting-wide.webp': { width: 1200, height: 799 },
+  'woman-praying.webp': { width: 1200, height: 801 },
+  'phone-prayer-moment.webp': { width: 1200, height: 801 },
+  'children-gathered-outside.webp': { width: 1200, height: 800 },
+  'students-purple-uniform.webp': { width: 1200, height: 962 },
+};
+
 /* Our Story page section composition */
 export default function OurStoryContent() {
   return (
@@ -29,11 +42,17 @@ function StoryImage({
   className?: string;
   imageClass?: string;
 }) {
+  const meta = storyImageMeta[file];
+
   return (
     <div className={'relative overflow-hidden ' + className}>
       <img
         src={encodeURI('/images/about/' + file)}
         alt={alt}
+        width={meta?.width}
+        height={meta?.height}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        decoding="async"
         className={'absolute inset-0 h-full w-full ' + imageClass}
         loading="lazy"
       />

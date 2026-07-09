@@ -1,5 +1,7 @@
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { usePage, type Page } from '../../context/PageContext';
+
+const contactHref = 'mailto:royalchristianacademy07@gmail.com?subject=Contact%20Royal%20Christian%20Academy';
 
 /* Footer navigation mirrors the active route list. */
 const quickLinks: { label: string; page: Page }[] = [
@@ -28,6 +30,8 @@ export default function Footer() {
                 alt="Kapsitwet Royal Christian Academy"
                 width="512"
                 height="523"
+                decoding="async"
+                loading="lazy"
                 className="h-14 w-14 rounded-full bg-white border-2 border-gold object-contain p-1 flex-shrink-0"
               />
               <div>
@@ -39,22 +43,6 @@ export default function Footer() {
               Training hands for service, minds for truth, and hearts for Christ.
             </p>
             <p className="text-white/40 text-xs italic mb-6">Vision: Victory in Jesus</p>
-            <div className="flex gap-3">
-              {[
-                { Icon: Facebook, href: '#' },
-                { Icon: Instagram, href: '#' },
-                { Icon: Twitter, href: '#' },
-                { Icon: Youtube, href: '#' },
-              ].map(({ Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-colors duration-200"
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -95,13 +83,13 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={15} className="text-gold flex-shrink-0" />
-                <a href="mailto:royalchristianacademy07@gmail.com" className="text-white/55 text-xs hover:text-gold transition-colors break-all">
+                <a href={contactHref} className="text-white/55 text-xs hover:text-gold transition-colors break-all">
                   royalchristianacademy07@gmail.com
                 </a>
               </li>
             </ul>
             <a
-              href="mailto:royalchristianacademy07@gmail.com"
+              href={contactHref}
               className="mt-6 inline-block bg-gold text-forest-dark font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-gold-light transition-colors duration-200"
             >
               Contact Us

@@ -286,21 +286,21 @@ function AdmissionsCta() {
             <span className="text-white/60 text-xs">+254-724-403-284</span>
           </a>
           <a
-            href="mailto:royalchristianacademy07@gmail.com"
+            href="mailto:royalchristianacademy07@gmail.com?subject=School%20Inquiry"
             className="flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:border-forest hover:shadow-md transition-all hover-lift text-center"
           >
             <Mail size={24} className="text-forest" />
             <span className="font-semibold text-sm text-forest">Email the School</span>
             <span className="text-gray-400 text-xs">We respond within 24hrs</span>
           </a>
-          <button
-            onClick={() => { window.location.href = 'mailto:royalchristianacademy07@gmail.com'; }}
+          <a
+            href="mailto:royalchristianacademy07@gmail.com?subject=Contact%20Royal%20Christian%20Academy"
             className="flex flex-col items-center gap-3 bg-gold text-forest-dark rounded-2xl p-6 hover:bg-gold-light transition-colors hover-lift text-center"
           >
             <MapPin size={24} />
             <span className="font-semibold text-sm">Visit Us</span>
             <span className="text-forest-dark/70 text-xs">Kapsitwet, Kitale</span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

@@ -51,6 +51,11 @@ function AboutIntro() {
         <img
           src="/images/about/our-school.webp"
           alt="Royal Christian Academy school community"
+          width="1200"
+          height="900"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          decoding="async"
+          loading="lazy"
           className="h-80 lg:h-[28rem] w-full rounded-2xl object-cover shadow-sm"
         />
       </div>
@@ -136,6 +141,7 @@ function AccreditationAffiliations() {
                   alt="Kapsitwet Royal Christian Academy logo"
                   width="512"
                   height="523"
+                  decoding="async"
                   className="w-24 sm:w-28 object-contain"
                   loading="lazy"
                 />
@@ -153,6 +159,9 @@ function AccreditationAffiliations() {
                 <img
                   src="/images/about/Camden-Logo.webp"
                   alt="Camden Seventh-day Adventist Church logo"
+                  width="686"
+                  height="296"
+                  decoding="async"
                   className="max-h-24 w-full object-contain"
                   loading="lazy"
                 />
@@ -161,6 +170,9 @@ function AccreditationAffiliations() {
                 <img
                   src="/images/about/blessings-a-new.png"
                   alt="Blessings Anew Ministry logo"
+                  width="1022"
+                  height="442"
+                  decoding="async"
                   className="max-h-24 w-full object-contain"
                   loading="lazy"
                 />
