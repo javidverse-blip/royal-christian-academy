@@ -196,9 +196,8 @@ function AccreditationAffiliations() {
 /* Recognition for the people and partners who support the school mission */
 function FoundersDonors() {
   return (
-    <section className="section-padding bg-white">
-      <div className="max-w-5xl mx-auto">
-        <article className="rounded-2xl bg-forest px-7 py-10 sm:px-10 sm:py-12 text-center shadow-sm">
+    <section className="section-padding" style={{ background: 'linear-gradient(135deg, #341d6f 0%, #4a2d8f 100%)' }}>
+      <div className="max-w-5xl mx-auto px-4 text-center sm:px-8">
           <div className="w-12 h-12 rounded-xl bg-gold/15 border border-gold/25 flex items-center justify-center mx-auto mb-5">
             <Heart size={20} className="text-gold" />
           </div>
@@ -207,7 +206,6 @@ function FoundersDonors() {
           <p className="text-white/80 leading-8 max-w-3xl mx-auto">
             Kapsitwet Royal Christian Academy is grateful for the vision, dedication, and support of its founders, donors, and partners. Their contributions help advance the mission of providing Christ-centered education and creating opportunities for students to grow academically, spiritually, and practically.
           </p>
-        </article>
       </div>
     </section>
   );
@@ -219,7 +217,7 @@ function VisitUs() {
 
   return (
     <section className="section-padding bg-white">
-      <div className="max-w-5xl mx-auto rounded-2xl bg-cream border border-gray-100 p-7 sm:p-10 lg:p-12 shadow-sm">
+      <div className="max-w-7xl mx-auto rounded-2xl bg-cream border border-gray-100 p-7 sm:p-10 lg:p-12 shadow-sm">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center">
           <div>
             <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">You Are Welcome</p>

@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import PageBanner from '../../components/ui/PageBanner';
+import { usePage } from '../../context/PageContext';
 
 const studentLifePhotos = [
   { title: 'Pre-primary', caption: 'Young learners growing together in a safe, joyful classroom environment.', image: '/images/gallery/pre-primary.webp', imageClass: 'object-[center_44%]' },
@@ -80,6 +81,8 @@ const upcomingProjects = [
 
 /* Gallery page content: student activities and upcoming projects */
 export default function GalleryContent() {
+  const { navigate } = usePage();
+
   return (
     <>
       <PageBanner page="gallery" />
@@ -183,7 +186,8 @@ export default function GalleryContent() {
               Your support helps provide safe spaces, daily meals, secure facilities, and a stronger future for every learner.
             </p>
             <a
-              href="mailto:royalchristianacademy07@gmail.com?subject=Contact%20Royal%20Christian%20Academy"
+              href="/contact"
+              onClick={(event) => { event.preventDefault(); navigate('contact'); }}
               className="inline-flex items-center justify-center gap-2 bg-gold text-forest font-bold px-8 py-3.5 rounded-full hover:bg-gold-light transition-colors"
             >
               Support Our Projects <ArrowRight size={17} />

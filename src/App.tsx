@@ -9,6 +9,7 @@ import ProgramsPage from './pages/ProgramsPage';
 import AdmissionsPage from './pages/AdmissionsPage';
 import StaffPage from './pages/StaffPage';
 import GalleryPage from './pages/GalleryPage';
+import ContactPage from './pages/ContactPage';
 
 /* Canonical browser paths for each client-side route. */
 const pagePaths: Record<Page, string> = {
@@ -19,6 +20,7 @@ const pagePaths: Record<Page, string> = {
   admissions: '/admissions',
   staff: '/staff',
   gallery: '/gallery',
+  contact: '/contact',
 };
 
 
@@ -39,6 +41,7 @@ function PageContent({ page }: { page: Page }) {
     case 'admissions': return <AdmissionsPage />;
     case 'staff':      return <StaffPage />;
     case 'gallery':    return <GalleryPage />;
+    case 'contact':    return <ContactPage />;
     default:           return <HomePage />;
   }
 }

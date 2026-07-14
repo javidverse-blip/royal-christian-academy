@@ -1,6 +1,7 @@
 import { CheckCircle, Phone, Mail, MapPin, FileText, Calendar, DollarSign, ClipboardList } from 'lucide-react';
 import PageBanner from '../../components/ui/PageBanner';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { usePage } from '../../context/PageContext';
 
 const requirements = [
   'Meet the minimum age requirement for the desired grade level.',
@@ -189,6 +190,8 @@ function StepCard({ step, delay, isLast }: { step: (typeof enrollmentSteps)[0]; 
 function FeesAndDocuments() {
   const feesRef = useScrollAnimation();
   const docsRef = useScrollAnimation();
+  const { navigate } = usePage();
+
   return (
     <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
@@ -205,7 +208,8 @@ function FeesAndDocuments() {
               Fees may be paid per term or according to arrangements approved by the school administration. We are committed to making quality Christian education accessible.
             </p>
             <a
-              href="mailto:royalchristianacademy07@gmail.com?subject=Request%20Fee%20Structure"
+              href="/contact"
+              onClick={(event) => { event.preventDefault(); navigate('contact'); }}
               className="inline-flex items-center gap-2 bg-forest text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-forest-light transition-colors"
             >
               <Mail size={14} />
@@ -268,6 +272,7 @@ function DeadlinesSection() {
 /* Admissions contact options */
 function AdmissionsCta() {
   const ref = useScrollAnimation();
+
   return (
     <section className="section-padding bg-cream">
       <div className="max-w-3xl mx-auto">
@@ -291,10 +296,10 @@ function AdmissionsCta() {
           >
             <Mail size={24} className="text-forest" />
             <span className="font-semibold text-sm text-forest">Email the School</span>
-            <span className="text-gray-400 text-xs">We respond within 24hrs</span>
+            <span className="text-gray-400 text-xs break-all">royalchristianacademy07@gmail.com</span>
           </a>
           <a
-            href="mailto:royalchristianacademy07@gmail.com?subject=Contact%20Royal%20Christian%20Academy"
+            href="#site-footer"
             className="flex flex-col items-center gap-3 bg-gold text-forest-dark rounded-2xl p-6 hover:bg-gold-light transition-colors hover-lift text-center"
           >
             <MapPin size={24} />

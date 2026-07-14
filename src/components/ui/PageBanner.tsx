@@ -27,6 +27,10 @@ const bannerConfig: Record<Exclude<Page, 'home'>, { title: string; subtitle: str
     title: 'Gallery',
     subtitle: 'A glimpse into student activities, learning, worship, service, and the projects shaping our future.',
   },
+  contact: {
+    title: 'Contact Us',
+    subtitle: 'Connect with Royal Christian Academy about partnership, support, school needs, and general questions.',
+  },
 };
 
 

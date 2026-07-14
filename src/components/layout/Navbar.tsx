@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePage, type Page } from '../../context/PageContext';
 
-const contactHref = 'mailto:royalchristianacademy07@gmail.com?subject=Contact%20Royal%20Christian%20Academy';
-
 /* Main navigation shared by desktop and mobile menus. */
 const navLinks: { label: string; page: Page; href: string }[] = [
   { label: 'Home', page: 'home', href: '/' },
@@ -65,7 +63,8 @@ export default function Navbar() {
         </ul>
 
         <a
-          href={contactHref}
+          href="/contact"
+          onClick={(event) => { event.preventDefault(); navigate('contact'); }}
           className="hidden lg:block bg-gold text-forest-dark font-semibold text-sm px-5 py-2 rounded-full hover:bg-gold-light transition-colors duration-200 flex-shrink-0"
         >
           Contact Us
@@ -100,8 +99,8 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href={contactHref}
-            onClick={() => setOpen(false)}
+            href="/contact"
+            onClick={(event) => { event.preventDefault(); navigate('contact'); setOpen(false); }}
             className="block w-full text-center bg-gold text-forest-dark font-semibold px-6 py-3 rounded-full"
           >
             Contact Us

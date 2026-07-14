@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 /* Pages supported by the local history-based router. */
-export type Page = 'home' | 'about' | 'our-story' | 'programs' | 'admissions' | 'staff' | 'gallery';
+export type Page = 'home' | 'about' | 'our-story' | 'programs' | 'admissions' | 'staff' | 'gallery' | 'contact';
 export type Navigate = (page: Page) => void;
 
 interface PageContextType {

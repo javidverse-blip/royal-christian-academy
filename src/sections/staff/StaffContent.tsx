@@ -44,6 +44,10 @@ const schoolLeadership = [
     name: 'Mr. Kelzy Origi',
     phone: '(+254)-715-726-929',
     description: "The Director oversees the overall administration, strategic planning, and development of the institution. The Director ensures that all departments work together effectively to achieve the school's goals and vision.",
+    image: '/images/staff/Mr.%20Kelzy%20Origi.png',
+    imageClass: 'object-[center_0%]',
+    imageWidth: 1080,
+    imageHeight: 1080,
     variant: 'person' as const,
   },
   {
@@ -51,36 +55,43 @@ const schoolLeadership = [
     name: 'Mr. Maxwell Okoth',
     phone: '(+254)-724-403-284',
     description: 'The Principal provides leadership in academic and student affairs, promoting excellence in teaching, learning, discipline, and character development. The Principal ensures a positive learning environment that supports student success.',
-    image: '/images/staff/principal.webp',
-    imageClass: 'object-[center_32%]',
-    imageWidth: 958,
-    imageHeight: 680,
+    image: '/images/staff/Mr.%20Maxwell%20Okoth.png',
+    imageClass: 'object-[center_0%]',
+    imageWidth: 1080,
+    imageHeight: 1080,
     variant: 'person' as const,
   },
   {
     name: 'MD. Rael Iteba',
     role: 'Secretary',
     description: 'The Secretary manages administrative coordination, communication, and record-keeping, supporting the efficient operation of the school and serving as a key point of contact for parents and stakeholders.',
-    image: '/images/staff/md-rael-iteba-secretary.webp',
-    imageClass: 'object-[center_28%]',
-    imageWidth: 1200,
-    imageHeight: 1600,
+    image: '/images/staff/MD.%20Rael%20Iteba.png',
+    imageClass: 'object-[center_0%]',
+    imageWidth: 1080,
+    imageHeight: 1080,
     variant: 'person' as const,
   },
 ] satisfies StaffMember[];
 
 const teachingFaculty = [
-  { name: 'MD. Valentine Wafula', role: 'Pre-Primary Teacher', image: '/images/staff/md-valentine-wafula-pre-primary.webp', imageClass: 'object-[center_10%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
-  { name: 'MD. Phanlyne Sifuni', role: 'Grade 1 Teacher', image: '/images/staff/md-phanlyne-sifuni-grade-one-class-teacher.webp', imageClass: 'object-[center_30%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
-  { name: 'Mr. Nevin Abur', role: 'Grade 2 Teacher', image: '/images/staff/mr-nevin-abur-grade-two-class-teacher.webp', imageClass: 'object-[center_15%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+  { name: 'MD. Valentine Wafula', role: 'Pre-Primary Teacher', image: '/images/staff/MD.%20Valentine%20Wafula.png', imageClass: 'object-[center_0%]', imageWidth: 1080, imageHeight: 1080, variant: 'person' as const },
+  { name: 'MD. Phanlyne Sifuni', role: 'Grade 1 Teacher', image: '/images/staff/MD.%20Phanlyne%20Sifuni.png', imageClass: 'object-[center_0%]', imageWidth: 1080, imageHeight: 1080, variant: 'person' as const },
+  { name: 'Mr. Nevin Abur', role: 'Grade 2 Teacher', image: '/images/staff/Mr.%20Nevin%20Abur.png', imageClass: 'object-[center_0%]', imageWidth: 1080, imageHeight: 1080, variant: 'person' as const },
 ] satisfies StaffMember[];
 
-const supportTeam = [
-  { name: 'Mr. Emmanuel Simiyu', role: 'Farm Manager', image: '/images/staff/mr-emmanuel-simiyu-farm-manager.webp', imageClass: 'object-[center_40%]', imageWidth: 1200, imageHeight: 1600, variant: 'nature' as const },
-  { role: 'Farm Workers', image: '/images/staff/farm-workers.webp', imageClass: 'object-[center_38%]', imageWidth: 1200, imageHeight: 900, variant: 'nature' as const },
-  { name: 'Emilly Simiyu', role: 'Cook 1', image: '/images/staff/cook-1.webp', imageClass: 'object-[center_35%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
-  { name: 'Colletty Watoya', role: 'Cook 2', image: '/images/staff/cook-2.webp', imageClass: 'object-[center_10%]', imageWidth: 1200, imageHeight: 1600, variant: 'person' as const },
+const farmTeam = [
+  { name: 'Mr. Emmanuel Simiyu', role: 'Farm Manager', image: '/images/staff/mr-emmanuel-simiyu.webp', imageAlt: 'Mr. Emmanuel Simiyu standing in the school farm', imageClass: 'object-[center_18%]', imageWidth: 1920, imageHeight: 1080, variant: 'nature' as const },
+  { role: 'Farm Workers', image: '/images/staff/farm-workers.webp', imageAlt: 'Farm workers standing together in the school farm', imageClass: 'object-[center_18%]', imageWidth: 1920, imageHeight: 1080, variant: 'nature' as const },
 ] satisfies StaffMember[];
+
+const kitchenTeam = [
+  { name: 'Emilly Simiyu', role: 'Cook 1', image: '/images/staff/cook-1-emilly-simiyu.webp', imageAlt: 'Emilly Simiyu, cook at Royal Christian Academy', imageClass: 'object-[center_18%]', imageWidth: 1920, imageHeight: 1080, variant: 'person' as const },
+  { name: 'Colletty Watoya', role: 'Cook 2', image: '/images/staff/cook-2-colletty-watoya.webp', imageAlt: 'Colletty Watoya, cook at Royal Christian Academy', imageClass: 'object-[center_18%]', imageWidth: 1920, imageHeight: 1080, variant: 'person' as const },
+] satisfies StaffMember[];
+
+function phoneHref(phone: string) {
+  return `tel:${phone.replace(/(?!^)\D/g, '')}`;
+}
 
 /* Staff page section composition */
 export default function StaffContent() {
@@ -114,11 +125,19 @@ export default function StaffContent() {
       />
       <StaffSection
         eyebrow="Serving Daily"
-        title="Support Team"
-        description="Our support team helps sustain the school environment through farming, food preparation, and practical care for the academy community."
-        members={supportTeam}
+        title="Kitchen Team"
+        description="Our kitchen team helps care for students through daily meal preparation and faithful service to the academy community."
+        members={kitchenTeam}
         background="bg-cream"
         cardBackground="bg-white"
+      />
+      <StaffSection
+        eyebrow="Growing and Sustaining"
+        title="Farm Team"
+        description="Our farm team supports the academy through agriculture, food production, and practical stewardship of the land."
+        members={farmTeam}
+        background="bg-white"
+        cardBackground="bg-cream"
       />
       <GalleryCta />
     </>
@@ -191,7 +210,7 @@ function StaffCard({ member, cardBackground, photoHeight }: { member: StaffMembe
         <div className="w-8 h-1 bg-gold rounded-full mb-3" />
         <p className="text-gold text-xs font-bold tracking-widest uppercase">{member.role}</p>
         {member.name && <h3 className="font-bold text-forest font-serif mt-1">{member.name}</h3>}
-        {member.phone && <a href={`tel:${member.phone}`} className="text-xs text-forest-light block mt-1">{member.phone}</a>}
+        {member.phone && <a href={phoneHref(member.phone)} className="text-xs text-forest-light block mt-1">{member.phone}</a>}
         {member.description && <p className="text-gray-500 text-sm leading-relaxed mt-3 flex-1">{member.description}</p>}
       </div>
     </article>

@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Quote } from 'lucide-react';
 import { usePage, type Navigate } from '../../context/PageContext';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
@@ -23,6 +23,7 @@ export default function HomeContent() {
     <>
       <Hero navigate={navigate} />
       <WelcomeSection navigate={navigate} />
+      <HomeStoryIntro navigate={navigate} />
       <MissionVision />
       <ProgramsPreview navigate={navigate} />
       <StudentLifeSection navigate={navigate} />
@@ -117,10 +118,54 @@ function WelcomeSection({ navigate }: { navigate: Navigate }) {
             <p className="text-gray-600 text-base leading-loose mb-5">
               Guided by our vision, <em>"Victory in Jesus,"</em> we strive to create an environment where faith, character, knowledge, and service flourish together. Our goal is to help every learner develop a personal relationship with Christ while pursuing academic excellence and purposeful living.
             </p>
-            <p className="text-gray-600 text-base leading-loose mb-8">
-              True education goes beyond academic achievement. It equips learners with godly character, practical skills, sound judgment, and a heart for service — preparing them to become responsible leaders who positively impact their families, communities, and the world for Christ.
+            <div className="flex flex-col sm:flex-row gap-4 pt-3">
+              <button
+                onClick={() => navigate('about')}
+                className="bg-forest text-white font-semibold px-8 py-3 rounded-full hover:bg-forest-light transition-colors duration-200"
+              >
+                About Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* Homepage story introduction */
+function HomeStoryIntro({ navigate }: { navigate: Navigate }) {
+  const ref = useScrollAnimation();
+
+  return (
+    <section className="py-10 px-4 sm:px-8 sm:py-12 lg:px-16 lg:py-14 bg-cream">
+      <div className="max-w-7xl mx-auto">
+        <div ref={ref} className="animate-on-scroll grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="relative order-1 min-h-[20rem] overflow-hidden rounded-2xl bg-white shadow-xl sm:min-h-[28rem] lg:order-2 lg:min-h-[34rem]">
+            <img
+              src="/images/about/our-story.png"
+              alt="Royal Christian Academy story and campaign booklet cover"
+              width="1080"
+              height="1080"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              decoding="async"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-contain p-2 sm:p-3"
+            />
+          </div>
+          <div className="order-2 text-gray-700 leading-8 lg:order-1 lg:pr-2">
+            <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">A Humble Beginning</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-forest font-serif mb-5 leading-tight">
+              A School Born and Thriving From Faith
+            </h2>
+            <blockquote className="mb-6 rounded-2xl border-l-4 border-gold bg-gold/10 px-5 py-5 text-forest shadow-sm">
+              <Quote size={30} className="text-gold mb-3" aria-hidden="true" />
+              <p className="font-serif text-2xl italic leading-snug sm:text-3xl">"It's a rescue mission disguised as a school."</p>
+            </blockquote>
+            <p className="text-base leading-8">
+              Royal Christian Academy began with a simple act of faith and a willingness to use what was already in hand. What started in humble conditions has grown into a place of education, safety, dignity, and hope for vulnerable children. The school continues to thrive because ordinary people have chosen to listen, respond, and believe that God can build something lasting from a small beginning.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-8">
               <button
                 onClick={() => navigate('our-story')}
                 className="bg-forest text-white font-semibold px-8 py-3 rounded-full hover:bg-forest-light transition-colors duration-200"
