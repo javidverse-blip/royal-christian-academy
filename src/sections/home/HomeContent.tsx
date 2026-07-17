@@ -3,10 +3,7 @@ import { usePage, type Navigate } from '../../context/PageContext';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const programs = [
-  { icon: '🍽️', title: 'Feeding Program', desc: 'Nutritious meals supporting health, academic performance, and overall well-being.', image: '/images/programs/feeding-program.webp', imageClass: 'object-[center_42%]', width: 744, height: 720 },
   { icon: '🔧', title: 'Vocational Training', desc: 'Hands-on skills fostering self-reliance, entrepreneurship, and sustainable livelihoods.', image: '/images/programs/vocational-training.webp', imageClass: 'object-[center_38%]', width: 1146, height: 1050 },
-  { icon: '🌿', title: 'Health Ministry', desc: 'Natural health principles, preventive healthcare, and healthy lifestyle education.', image: '/images/programs/health-ministry.webp', imageClass: 'object-center', width: 1200, height: 900 },
-  { icon: '📖', title: 'Bible Training', desc: 'Biblical education, discipleship, and character formation for Christian service.', image: '/images/programs/bible-training.webp', imageClass: 'object-center', width: 1200, height: 675 },
   { icon: '🤝', title: 'Community Outreach', desc: "Evangelism, humanitarian assistance, and reflecting Christ's love in action.", image: '/images/programs/community-outreach.webp', imageClass: 'object-center', width: 1200, height: 828 },
   { icon: '🌱', title: 'Agriculture & Farming', desc: 'Sustainable farming, environmental stewardship, and responsible land management.', image: '/images/programs/agriculture-farming.webp', imageClass: 'object-center', width: 1200, height: 900 },
 ];
