@@ -188,7 +188,7 @@ export default function GalleryContent() {
             <a
               href="/contact"
               onClick={(event) => { event.preventDefault(); navigate('contact'); }}
-              className="inline-flex items-center justify-center gap-2 bg-gold text-forest font-bold px-8 py-3.5 rounded-full hover:bg-gold-light transition-colors"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-3.5 text-sm font-bold text-forest transition-colors hover:bg-gold-light sm:w-auto sm:px-8 sm:text-base"
             >
               Support Our Projects <ArrowRight size={17} />
             </a>

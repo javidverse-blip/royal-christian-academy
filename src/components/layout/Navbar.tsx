@@ -44,7 +44,7 @@ export default function Navbar() {
           </div>
         </a>
 
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden xl:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.page}>
               <a
@@ -65,13 +65,13 @@ export default function Navbar() {
         <a
           href="/contact"
           onClick={(event) => { event.preventDefault(); navigate('contact'); }}
-          className="hidden lg:block bg-gold text-forest-dark font-semibold text-sm px-5 py-2 rounded-full hover:bg-gold-light transition-colors duration-200 flex-shrink-0"
+          className="hidden xl:block bg-gold text-forest-dark font-semibold text-sm px-5 py-2 rounded-full hover:bg-gold-light transition-colors duration-200 flex-shrink-0"
         >
           Contact Us
         </a>
 
         <button
-          className="lg:hidden text-white p-2 flex-shrink-0"
+          className="xl:hidden text-white p-2 flex-shrink-0"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -80,7 +80,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-forest-dark border-t border-white/10 px-4 py-5">
+        <div className="xl:hidden bg-forest-dark border-t border-white/10 px-4 py-5">
           <ul className="flex flex-col gap-1 mb-5">
             {navLinks.map((link) => (
               <li key={link.page}>

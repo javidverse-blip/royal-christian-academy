@@ -8,6 +8,11 @@ const schoolPhoneHref = 'tel:+254724403284';
 const schoolLocation = 'Kapsitwet, Kitale, Trans-Nzoia County, Kenya';
 const fieldClass = 'h-12 w-full rounded-xl border border-gray-200 bg-white px-4 text-sm text-gray-700 outline-none transition-colors placeholder:text-gray-400 focus:border-forest focus:ring-4 focus:ring-gold/20';
 
+type ContactResponse = {
+  success?: boolean;
+  message?: string;
+};
+
 /* Contact page section composition. */
 export default function ContactContent() {
   return (
@@ -22,7 +27,7 @@ function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (status === 'sending' || status === 'success') return;
 
@@ -31,14 +36,20 @@ function ContactSection() {
 
     if (String(data.get('website') || '').trim()) return;
 
-    const fullName = String(data.get('fullName') || '').trim();
+    const name = String(data.get('name') || '').trim();
     const email = String(data.get('email') || '').trim();
-    const connectionType = String(data.get('connectionType') || '').trim();
+    const subject = String(data.get('subject') || '').trim();
     const message = String(data.get('message') || '').trim();
 
-    if (!fullName || !email || !connectionType || !message) {
+    if (!name || !email || !subject || !message) {
       setStatus('error');
       setError('Please complete all required fields before sending your message.');
+      return;
+    }
+
+    if (name.length > 120 || email.length > 254 || subject.length > 140 || message.length > 3000) {
+      setStatus('error');
+      setError('Please shorten your message details and try again.');
       return;
     }
 
@@ -51,19 +62,27 @@ function ContactSection() {
     setStatus('sending');
     setError('');
 
-    const mailSubject = encodeURIComponent(`Royal Christian Academy Contact: ${connectionType}`);
-    const mailBody = encodeURIComponent([
-      `Full Name: ${fullName}`,
-      `Email Address: ${email}`,
-      `How would you like to connect?: ${connectionType}`,
-      '',
-      'Message:',
-      message,
-    ].join('\n'));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, subject, message, website: String(data.get('website') || '') }),
+      });
+      const result = (await response.json().catch(() => ({}))) as ContactResponse;
 
-    window.location.href = `mailto:${schoolEmail}?subject=${mailSubject}&body=${mailBody}`;
-    form.reset();
-    setStatus('success');
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'We could not send your message right now. Please try again later.');
+      }
+
+      form.reset();
+      setStatus('success');
+    } catch (submissionError) {
+      setStatus('error');
+      setError(submissionError instanceof Error ? submissionError.message : 'We could not send your message right now. Please try again later.');
+    }
   };
 
   return (
@@ -99,22 +118,22 @@ function ContactSection() {
 
         <div className="p-6 sm:p-8 lg:p-10">
           <h2 className="text-3xl font-bold text-forest font-serif mb-6">Send Us a Message</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" aria-busy={status === 'sending'}>
             <div className="hidden" aria-hidden="true">
               <label htmlFor="website">Website</label>
               <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
             </div>
 
-            <FormField label="Full Name" htmlFor="fullName">
-              <input id="fullName" name="fullName" type="text" required placeholder="Your name" className={fieldClass} />
+            <FormField label="Full Name" htmlFor="name">
+              <input id="name" name="name" type="text" required maxLength={120} autoComplete="name" placeholder="Your name" className={fieldClass} />
             </FormField>
 
             <FormField label="Email Address" htmlFor="email">
-              <input id="email" name="email" type="email" required placeholder="your@email.com" className={fieldClass} />
+              <input id="email" name="email" type="email" required maxLength={254} autoComplete="email" placeholder="your@email.com" className={fieldClass} />
             </FormField>
 
-            <FormField label="How would you like to connect?" htmlFor="connectionType">
-              <select id="connectionType" name="connectionType" required defaultValue="" className={fieldClass}>
+            <FormField label="Subject" htmlFor="subject">
+              <select id="subject" name="subject" required defaultValue="" className={fieldClass}>
                 <option value="" disabled>Select an option</option>
                 <option>General Inquiry</option>
                 <option>Partner With Us</option>
@@ -129,13 +148,15 @@ function ContactSection() {
                 id="message"
                 name="message"
                 required
+                minLength={10}
+                maxLength={3000}
                 rows={6}
                 placeholder="Tell us how we can help."
                 className={fieldClass + ' h-auto min-h-36 resize-y py-3 leading-6'}
               />
             </FormField>
 
-            <div aria-live="polite">
+            <div aria-live="polite" role="status">
               {status === 'success' && (
                 <p className="rounded-xl bg-forest/10 px-4 py-3 text-sm text-forest">
                   Thank you for contacting Royal Christian Academy. Your message has been received, and we will get back to you soon.

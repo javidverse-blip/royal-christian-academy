@@ -1,0 +1,17 @@
+{
+  "name": "Kapsitwet Royal Christian Academy",
+  "short_name": "KRCA",
+  "description": "Training hands for service, minds for truth, and hearts for Christ.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#341d6f",
+  "icons": [
+    {
+      "src": "/images/general/krca-new-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

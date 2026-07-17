@@ -147,7 +147,7 @@ function ProgramsList() {
     <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto space-y-12">
         {programs.map((program, i) => (
-          <ProgramRow key={i} program={program} flip={i % 2 !== 0} delay={0} />
+          <ProgramRow key={i} program={program} flip={i % 2 !== 0} />
         ))}
       </div>
     </section>
@@ -156,7 +156,7 @@ function ProgramsList() {
 
 
 /* Alternating program image and description row */
-function ProgramRow({ program, flip }: { program: (typeof programs)[0]; flip: boolean; delay: number }) {
+function ProgramRow({ program, flip }: { program: (typeof programs)[0]; flip: boolean }) {
   const ref = useScrollAnimation();
   return (
     <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-cream">
